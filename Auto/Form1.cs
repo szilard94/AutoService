@@ -16,11 +16,6 @@ namespace Auto
             InitializeComponent();
             ConnectToDB lekeres = new ConnectToDB();
             keresoeredmeny.DataSource = lekeres.selectFrom("*", "Jarmuvek").Tables[0];
-            lekeres.closeConnection();
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void keresogomb_Click(object sender, EventArgs e)
@@ -61,54 +56,46 @@ namespace Auto
             kereso.Text = "";
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ujszervizInit()
         {
-        
-    }
+            rendszam.Text = "";
+            marka.Text = "";
+            tipus.Text = "";
+            evjarat.Text = "";
+            tulajnev.Text = "";
+            fax.Text = "";
+            telefon.Text = "";
+            mobil.Text = "";
+            email.Text = "";
+            megye.Text = "";
+            Cim.Text = "";
+        }
 
         private void ujalvaz_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void rendszam_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void marka_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tipus_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void evjarat_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tulajnev_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fax_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void telefon_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mobil_TextChanged(object sender, EventArgs e)
-        {
-
+            if (ujalvaz.Text.Length == 17)
+            {
+                ConnectToDB lekeres = new ConnectToDB();
+                DataSet datas = lekeres.selectFrom("SELECT rendszam, marka, tipus, evjarat, nev, fax, telefon, mobil, megye, cim, email FROM Jarmuvek JOIN Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID WHERE alvazszam = " + ujalvaz.Text);
+                if (datas.Tables[0].Rows.Count != 0)
+                {
+                    rendszam.Text = datas.Tables[0].Rows[0]["rendszam"].ToString();
+                    marka.Text = datas.Tables[0].Rows[0]["marka"].ToString();
+                    tipus.Text = datas.Tables[0].Rows[0]["tipus"].ToString();
+                    evjarat.Text = datas.Tables[0].Rows[0]["evjarat"].ToString();
+                    tulajnev.Text = datas.Tables[0].Rows[0]["nev"].ToString();
+                    fax.Text = datas.Tables[0].Rows[0]["fax"].ToString();
+                    telefon.Text = datas.Tables[0].Rows[0]["telefon"].ToString();
+                    mobil.Text = datas.Tables[0].Rows[0]["mobil"].ToString();
+                    email.Text = datas.Tables[0].Rows[0]["email"].ToString();
+                    megye.Text = datas.Tables[0].Rows[0]["megye"].ToString();
+                    Cim.Text = datas.Tables[0].Rows[0]["cim"].ToString();
+                }
+                else
+                {
+                    ujszervizInit();
+                }
+            }
         }
     }
 }
