@@ -14,6 +14,9 @@ namespace Auto
         public Form1()
         {
             InitializeComponent();
+            ConnectToDB lekeres = new ConnectToDB();
+            keresoeredmeny.DataSource = lekeres.selectFrom("*", "Jarmuvek").Tables[0];
+            lekeres.closeConnection();
         }
 
 
@@ -36,13 +39,6 @@ namespace Auto
             panel1.Visible = false;
             panel3.Visible = true;
             panel2.Visible = false;
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            ConnectToDB lekeres = new ConnectToDB();
-            keresoeredmeny.DataSource = lekeres.selectFrom("*", "Jarmuvek");
         }
 
         private void keresoUrit(object sender, MouseEventArgs e)
