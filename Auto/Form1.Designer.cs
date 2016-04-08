@@ -33,13 +33,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.nevkereso = new System.Windows.Forms.RadioButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.keresoeredmeny = new System.Windows.Forms.DataGridView();
             this.kereso = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.beallitasok = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // keresogomb
@@ -64,20 +67,19 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.nevkereso);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.keresoeredmeny);
             this.panel1.Controls.Add(this.kereso);
-            this.panel1.Location = new System.Drawing.Point(0, 54);
+            this.panel1.Location = new System.Drawing.Point(0, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(782, 510);
+            this.panel1.Size = new System.Drawing.Size(781, 498);
             this.panel1.TabIndex = 2;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(651, 75);
+            this.radioButton2.Location = new System.Drawing.Point(133, 75);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(112, 17);
             this.radioButton2.TabIndex = 3;
@@ -97,13 +99,13 @@
             this.nevkereso.Text = "Név alapján";
             this.nevkereso.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // keresoeredmeny
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 112);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(751, 383);
-            this.dataGridView1.TabIndex = 1;
+            this.keresoeredmeny.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.keresoeredmeny.Location = new System.Drawing.Point(12, 112);
+            this.keresoeredmeny.Name = "keresoeredmeny";
+            this.keresoeredmeny.Size = new System.Drawing.Size(751, 383);
+            this.keresoeredmeny.TabIndex = 1;
             // 
             // kereso
             // 
@@ -118,26 +120,46 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(219, 223);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(3, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(249, 37);
+            this.panel2.Size = new System.Drawing.Size(778, 518);
             this.panel2.TabIndex = 3;
+            this.panel2.Visible = false;
             // 
-            // label2
+            // dataGridView1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(222, 139);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "label2";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 20);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(759, 489);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // beallitasok
+            // 
+            this.beallitasok.Location = new System.Drawing.Point(236, 11);
+            this.beallitasok.Name = "beallitasok";
+            this.beallitasok.Size = new System.Drawing.Size(75, 23);
+            this.beallitasok.TabIndex = 4;
+            this.beallitasok.Text = "Beállitások";
+            this.beallitasok.UseVisualStyleBackColor = true;
+            this.beallitasok.Click += new System.EventHandler(this.beallitasok_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(775, 512);
+            this.panel3.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.beallitasok);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.muszaki);
             this.Controls.Add(this.keresogomb);
@@ -145,9 +167,9 @@
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,12 +178,14 @@
         private System.Windows.Forms.Button keresogomb;
         private System.Windows.Forms.Button muszaki;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton nevkereso;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView keresoeredmeny;
         private System.Windows.Forms.TextBox kereso;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button beallitasok;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

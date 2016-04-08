@@ -21,14 +21,22 @@ namespace Auto
         {
             panel2.Visible = false;
             panel1.Visible = true;
+            panel3.Visible = false;
         }
 
         private void muszaki_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
             panel2.Visible = true;
+            panel3.Visible = false;
         }
 
+        private void beallitasok_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            panel3.Visible = true;
+            panel2.Visible = false;
+        }
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,5 +48,7 @@ namespace Auto
         {
             kereso.Text = "";
         }
+
+        
     }
 }
