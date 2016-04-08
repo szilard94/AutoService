@@ -30,6 +30,7 @@ namespace Auto
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
+            cnn.Close();
             return ds;
         }
 
@@ -40,6 +41,7 @@ namespace Auto
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
+            cnn.Close();
             return ds;
         }
 

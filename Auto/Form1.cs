@@ -41,7 +41,8 @@ namespace Auto
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ConnectToDB lekeres = new ConnectToDB();
+            keresoeredmeny.DataSource = lekeres.selectFrom("*", "Jarmuvek");
         }
 
         private void keresoUrit(object sender, MouseEventArgs e)
