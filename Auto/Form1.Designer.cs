@@ -36,17 +36,44 @@
             this.keresoeredmeny = new System.Windows.Forms.DataGridView();
             this.kereso = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.beallitasok = new System.Windows.Forms.Button();
             this.ujszerviz = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.ujalvaz = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rendszam = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.marka = new System.Windows.Forms.TextBox();
+            this.tipus = new System.Windows.Forms.TextBox();
+            this.evjarat = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tulajnev = new System.Windows.Forms.TextBox();
+            this.fax = new System.Windows.Forms.TextBox();
+            this.telefon = new System.Windows.Forms.TextBox();
+            this.mobil = new System.Windows.Forms.TextBox();
+            this.megye = new System.Windows.Forms.TextBox();
+            this.Cim = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.szerviznyitas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // keresogomb
@@ -127,19 +154,9 @@
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(0, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(778, 481);
+            this.panel2.Size = new System.Drawing.Size(778, 469);
             this.panel2.TabIndex = 3;
             this.panel2.Visible = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.checkBox2);
-            this.panel3.Controls.Add(this.checkBox1);
-            this.panel3.Location = new System.Drawing.Point(3, 80);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(772, 475);
-            this.panel3.TabIndex = 1;
-            this.panel3.Visible = false;
             // 
             // dataGridView1
             // 
@@ -149,6 +166,36 @@
             this.dataGridView1.Size = new System.Drawing.Size(761, 451);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.checkBox2);
+            this.panel3.Controls.Add(this.checkBox1);
+            this.panel3.Location = new System.Drawing.Point(3, 80);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(772, 454);
+            this.panel3.TabIndex = 1;
+            this.panel3.Visible = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(9, 112);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(80, 17);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(11, 65);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // beallitasok
             // 
@@ -170,31 +217,266 @@
             this.ujszerviz.UseVisualStyleBackColor = true;
             this.ujszerviz.Click += new System.EventHandler(this.ujszerviz_Click);
             // 
-            // checkBox1
+            // panel4
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(11, 65);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.panel4.Controls.Add(this.szerviznyitas);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.email);
+            this.panel4.Controls.Add(this.Cim);
+            this.panel4.Controls.Add(this.megye);
+            this.panel4.Controls.Add(this.mobil);
+            this.panel4.Controls.Add(this.telefon);
+            this.panel4.Controls.Add(this.fax);
+            this.panel4.Controls.Add(this.tulajnev);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.evjarat);
+            this.panel4.Controls.Add(this.tipus);
+            this.panel4.Controls.Add(this.marka);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.rendszam);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.ujalvaz);
+            this.panel4.Location = new System.Drawing.Point(3, 75);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(772, 446);
+            this.panel4.TabIndex = 6;
+            this.panel4.Visible = false;
             // 
-            // checkBox2
+            // ujalvaz
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(9, 112);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ujalvaz.Location = new System.Drawing.Point(11, 44);
+            this.ujalvaz.Name = "ujalvaz";
+            this.ujalvaz.Size = new System.Drawing.Size(150, 20);
+            this.ujalvaz.TabIndex = 0;
+            this.ujalvaz.TextChanged += new System.EventHandler(this.ujalvaz_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Add meg az alvázszámot!";
+            // 
+            // rendszam
+            // 
+            this.rendszam.Enabled = false;
+            this.rendszam.Location = new System.Drawing.Point(11, 107);
+            this.rendszam.Name = "rendszam";
+            this.rendszam.Size = new System.Drawing.Size(150, 20);
+            this.rendszam.TabIndex = 2;
+            this.rendszam.TextChanged += new System.EventHandler(this.rendszam_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Add meg a rendszámot!";
+            // 
+            // marka
+            // 
+            this.marka.Enabled = false;
+            this.marka.Location = new System.Drawing.Point(222, 106);
+            this.marka.Name = "marka";
+            this.marka.Size = new System.Drawing.Size(148, 20);
+            this.marka.TabIndex = 4;
+            this.marka.TextChanged += new System.EventHandler(this.marka_TextChanged);
+            // 
+            // tipus
+            // 
+            this.tipus.Enabled = false;
+            this.tipus.Location = new System.Drawing.Point(436, 107);
+            this.tipus.Name = "tipus";
+            this.tipus.Size = new System.Drawing.Size(144, 20);
+            this.tipus.TabIndex = 5;
+            this.tipus.TextChanged += new System.EventHandler(this.tipus_TextChanged);
+            // 
+            // evjarat
+            // 
+            this.evjarat.Enabled = false;
+            this.evjarat.Location = new System.Drawing.Point(644, 106);
+            this.evjarat.Name = "evjarat";
+            this.evjarat.Size = new System.Drawing.Size(125, 20);
+            this.evjarat.TabIndex = 6;
+            this.evjarat.TextChanged += new System.EventHandler(this.evjarat_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(271, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Márka";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(484, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Tipus";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(661, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Évjárat";
+            // 
+            // tulajnev
+            // 
+            this.tulajnev.Enabled = false;
+            this.tulajnev.Location = new System.Drawing.Point(11, 180);
+            this.tulajnev.Name = "tulajnev";
+            this.tulajnev.Size = new System.Drawing.Size(150, 20);
+            this.tulajnev.TabIndex = 10;
+            this.tulajnev.TextChanged += new System.EventHandler(this.tulajnev_TextChanged);
+            // 
+            // fax
+            // 
+            this.fax.Enabled = false;
+            this.fax.Location = new System.Drawing.Point(9, 256);
+            this.fax.Name = "fax";
+            this.fax.Size = new System.Drawing.Size(152, 20);
+            this.fax.TabIndex = 11;
+            this.fax.TextChanged += new System.EventHandler(this.fax_TextChanged);
+            // 
+            // telefon
+            // 
+            this.telefon.Enabled = false;
+            this.telefon.Location = new System.Drawing.Point(222, 256);
+            this.telefon.Name = "telefon";
+            this.telefon.Size = new System.Drawing.Size(148, 20);
+            this.telefon.TabIndex = 12;
+            this.telefon.TextChanged += new System.EventHandler(this.telefon_TextChanged);
+            // 
+            // mobil
+            // 
+            this.mobil.Enabled = false;
+            this.mobil.Location = new System.Drawing.Point(436, 256);
+            this.mobil.Name = "mobil";
+            this.mobil.Size = new System.Drawing.Size(144, 20);
+            this.mobil.TabIndex = 13;
+            this.mobil.TextChanged += new System.EventHandler(this.mobil_TextChanged);
+            // 
+            // megye
+            // 
+            this.megye.Enabled = false;
+            this.megye.Location = new System.Drawing.Point(222, 338);
+            this.megye.Name = "megye";
+            this.megye.Size = new System.Drawing.Size(148, 20);
+            this.megye.TabIndex = 14;
+            // 
+            // Cim
+            // 
+            this.Cim.Enabled = false;
+            this.Cim.Location = new System.Drawing.Point(436, 338);
+            this.Cim.Name = "Cim";
+            this.Cim.Size = new System.Drawing.Size(144, 20);
+            this.Cim.TabIndex = 15;
+            // 
+            // email
+            // 
+            this.email.Enabled = false;
+            this.email.Location = new System.Drawing.Point(10, 338);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(151, 20);
+            this.email.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(46, 164);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Ügyfél Neve";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(65, 240);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(24, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Fax";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(274, 239);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Telefon ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(487, 239);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Mobil";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(65, 322);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Email";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(277, 322);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(39, 13);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Megye";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(490, 322);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(26, 13);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Cím";
+            // 
+            // szerviznyitas
+            // 
+            this.szerviznyitas.Location = new System.Drawing.Point(664, 398);
+            this.szerviznyitas.Name = "szerviznyitas";
+            this.szerviznyitas.Size = new System.Drawing.Size(75, 23);
+            this.szerviznyitas.TabIndex = 24;
+            this.szerviznyitas.Text = "Szerviznyitas";
+            this.szerviznyitas.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ujszerviz);
@@ -208,9 +490,11 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -230,6 +514,32 @@
         private System.Windows.Forms.Button ujszerviz;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox ujalvaz;
+        private System.Windows.Forms.TextBox rendszam;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox evjarat;
+        private System.Windows.Forms.TextBox tipus;
+        private System.Windows.Forms.TextBox marka;
+        private System.Windows.Forms.TextBox mobil;
+        private System.Windows.Forms.TextBox telefon;
+        private System.Windows.Forms.TextBox fax;
+        private System.Windows.Forms.TextBox tulajnev;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox Cim;
+        private System.Windows.Forms.TextBox megye;
+        private System.Windows.Forms.Button szerviznyitas;
     }
 }
 

@@ -35,6 +35,7 @@ namespace Auto
             panel1.Visible = false;
             panel2.Visible = true;
             panel3.Visible = false;
+            panel4.Visible = false;
         }
 
         private void beallitasok_Click(object sender, EventArgs e)
@@ -42,13 +43,17 @@ namespace Auto
             panel1.Visible = false;
             panel3.Visible =true;
             panel2.Visible = false;
+            panel4.Visible = false;
         }
-
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void ujszerviz_Click(object sender, EventArgs e)
         {
-
+            panel1.Visible = false;
+            panel3.Visible = false;
+            panel2.Visible = false;
+            panel4.Visible = true;
         }
+
+
 
         private void keresoUrit(object sender, MouseEventArgs e)
         {
@@ -59,5 +64,50 @@ namespace Auto
         {
         
     }
-}
+
+        private void ujalvaz_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rendszam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void marka_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tipus_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void evjarat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tulajnev_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fax_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telefon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mobil_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
