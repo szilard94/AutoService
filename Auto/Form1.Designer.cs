@@ -76,7 +76,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(219, 75);
+            this.radioButton2.Location = new System.Drawing.Point(651, 75);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(112, 17);
             this.radioButton2.TabIndex = 3;
