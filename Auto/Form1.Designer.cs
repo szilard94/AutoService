@@ -64,6 +64,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.nevkereso);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -118,7 +119,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(484, 11);
+            this.panel2.Location = new System.Drawing.Point(219, 223);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(249, 37);
             this.panel2.TabIndex = 3;
@@ -137,7 +138,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.muszaki);
             this.Controls.Add(this.keresogomb);
