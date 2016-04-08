@@ -165,7 +165,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(761, 451);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel3
             // 
@@ -274,7 +273,6 @@
             this.rendszam.Name = "rendszam";
             this.rendszam.Size = new System.Drawing.Size(150, 20);
             this.rendszam.TabIndex = 2;
-            this.rendszam.TextChanged += new System.EventHandler(this.rendszam_TextChanged);
             // 
             // label2
             // 
@@ -292,7 +290,6 @@
             this.marka.Name = "marka";
             this.marka.Size = new System.Drawing.Size(148, 20);
             this.marka.TabIndex = 4;
-            this.marka.TextChanged += new System.EventHandler(this.marka_TextChanged);
             // 
             // tipus
             // 
@@ -301,7 +298,6 @@
             this.tipus.Name = "tipus";
             this.tipus.Size = new System.Drawing.Size(144, 20);
             this.tipus.TabIndex = 5;
-            this.tipus.TextChanged += new System.EventHandler(this.tipus_TextChanged);
             // 
             // evjarat
             // 
@@ -310,7 +306,6 @@
             this.evjarat.Name = "evjarat";
             this.evjarat.Size = new System.Drawing.Size(125, 20);
             this.evjarat.TabIndex = 6;
-            this.evjarat.TextChanged += new System.EventHandler(this.evjarat_TextChanged);
             // 
             // label3
             // 
@@ -346,7 +341,6 @@
             this.tulajnev.Name = "tulajnev";
             this.tulajnev.Size = new System.Drawing.Size(150, 20);
             this.tulajnev.TabIndex = 10;
-            this.tulajnev.TextChanged += new System.EventHandler(this.tulajnev_TextChanged);
             // 
             // fax
             // 
@@ -355,7 +349,6 @@
             this.fax.Name = "fax";
             this.fax.Size = new System.Drawing.Size(152, 20);
             this.fax.TabIndex = 11;
-            this.fax.TextChanged += new System.EventHandler(this.fax_TextChanged);
             // 
             // telefon
             // 
@@ -364,7 +357,6 @@
             this.telefon.Name = "telefon";
             this.telefon.Size = new System.Drawing.Size(148, 20);
             this.telefon.TabIndex = 12;
-            this.telefon.TextChanged += new System.EventHandler(this.telefon_TextChanged);
             // 
             // mobil
             // 
@@ -373,7 +365,6 @@
             this.mobil.Name = "mobil";
             this.mobil.Size = new System.Drawing.Size(144, 20);
             this.mobil.TabIndex = 13;
-            this.mobil.TextChanged += new System.EventHandler(this.mobil_TextChanged);
             // 
             // megye
             // 
