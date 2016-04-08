@@ -69,6 +69,18 @@ namespace Auto
             email.Text = "";
             megye.Text = "";
             Cim.Text = "";
+
+            rendszam.Enabled = true;
+            marka.Enabled = true;
+            tipus.Enabled = true;
+            evjarat.Enabled = true;
+            tulajnev.Enabled = true;
+            fax.Enabled = true;
+            telefon.Enabled = true;
+            mobil.Enabled = true;
+            email.Enabled = true;
+            megye.Enabled = true;
+            Cim.Enabled = true;
         }
 
         private void ujalvaz_TextChanged(object sender, EventArgs e)
@@ -90,10 +102,23 @@ namespace Auto
                     email.Text = datas.Tables[0].Rows[0]["email"].ToString();
                     megye.Text = datas.Tables[0].Rows[0]["megye"].ToString();
                     Cim.Text = datas.Tables[0].Rows[0]["cim"].ToString();
+
+                    rendszam.Enabled = false;
+                    marka.Enabled = false;
+                    tipus.Enabled = false;
+                    evjarat.Enabled = false;
+                    tulajnev.Enabled = false;
+                    fax.Enabled = false;
+                    telefon.Enabled = false;
+                    mobil.Enabled = false;
+                    email.Enabled = false;
+                    megye.Enabled = false;
+                    Cim.Enabled = false;
                 }
                 else
                 {
                     ujszervizInit();
+
                 }
             }
         }
