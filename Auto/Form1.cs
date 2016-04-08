@@ -15,7 +15,10 @@ namespace Auto
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
+        }
 
         private void keresogomb_Click(object sender, EventArgs e)
         {
@@ -34,21 +37,24 @@ namespace Auto
         private void beallitasok_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
-            panel3.Visible = true;
+            panel3.Visible =true;
             panel2.Visible = false;
         }
 
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void ujszerviz_Click(object sender, EventArgs e)
         {
 
         }
+
 
         private void keresoUrit(object sender, MouseEventArgs e)
         {
             kereso.Text = "";
         }
 
-        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
