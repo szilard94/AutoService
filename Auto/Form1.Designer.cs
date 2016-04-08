@@ -464,9 +464,10 @@
             // 
             // szerviznyitas
             // 
-            this.szerviznyitas.Location = new System.Drawing.Point(664, 398);
+            this.szerviznyitas.Enabled = false;
+            this.szerviznyitas.Location = new System.Drawing.Point(644, 398);
             this.szerviznyitas.Name = "szerviznyitas";
-            this.szerviznyitas.Size = new System.Drawing.Size(75, 23);
+            this.szerviznyitas.Size = new System.Drawing.Size(95, 23);
             this.szerviznyitas.TabIndex = 24;
             this.szerviznyitas.Text = "Szerviznyitas";
             this.szerviznyitas.UseVisualStyleBackColor = true;
