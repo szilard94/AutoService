@@ -23,6 +23,17 @@ namespace Auto
             return cnn;
         }
 
+        public DataSet selectFrom(string selectString)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(selectString, cnn);
+            cnn.Open();
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+            cnn.Close();
+            return ds;
+        }
+
         public DataSet selectFrom(string fields, string table)
         {
             SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT " + fields + " FROM " + table, cnn);
@@ -30,6 +41,7 @@ namespace Auto
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
+            cnn.Close();
             return ds;
         }
 
@@ -40,6 +52,7 @@ namespace Auto
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
+            cnn.Close();
             return ds;
         }
 

@@ -14,6 +14,9 @@ namespace Auto
         public Form1()
         {
             InitializeComponent();
+            ConnectToDB lekeres = new ConnectToDB();
+            keresoeredmeny.DataSource = lekeres.selectFrom("*", "Jarmuvek").Tables[0];
+            lekeres.closeConnection();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -41,11 +44,11 @@ namespace Auto
             panel2.Visible = false;
         }
 
-        private void ujszerviz_Click(object sender, EventArgs e)
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
 
         private void keresoUrit(object sender, MouseEventArgs e)
         {
@@ -54,7 +57,7 @@ namespace Auto
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
+        
     }
+}
 }
