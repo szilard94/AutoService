@@ -244,8 +244,10 @@ namespace Auto
         {
             if(tulajnev.Enabled == false)
             {
+                ConnectToDB select = new ConnectToDB();
+                string AID = select.selectFrom("AID", "Jarmuvek", "alvazszam = " + ujalvaz.Text).Tables[0].Rows[0]["AID"].ToString();
                 ConnectToDB insert = new ConnectToDB();
-                insert.insertInto("Szerviz","AID, datum, kmOra", "0,GETDATE(),0");
+                insert.insertInto("Szerviz","AID, datum, kmOra", AID + ",GETDATE(),0");
             }
         }
     }
