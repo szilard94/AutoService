@@ -25,7 +25,8 @@ namespace Auto
             panel1.Visible = true;
             panel3.Visible = false;
             panel4.Visible = false;
-        }
+            panel5.Visible = false;
+          }
 
         private void muszaki_Click(object sender, EventArgs e)
         {
@@ -33,6 +34,7 @@ namespace Auto
             panel2.Visible = true;
             panel3.Visible = false;
             panel4.Visible = false;
+            panel5.Visible = false;
         }
 
         private void beallitasok_Click(object sender, EventArgs e)
@@ -41,6 +43,7 @@ namespace Auto
             panel3.Visible =true;
             panel2.Visible = false;
             panel4.Visible = false;
+            panel5.Visible = false;
         }
         private void ujszerviz_Click(object sender, EventArgs e)
         {
@@ -48,9 +51,17 @@ namespace Auto
             panel3.Visible = false;
             panel2.Visible = false;
             panel4.Visible = true;
+            panel5.Visible = false;
         }
 
-
+        private void szerviztortenet_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            panel3.Visible = false;
+            panel2.Visible = false;
+            panel4.Visible = false;
+            panel5.Visible = true;
+        }
 
         private void keresoUrit(object sender, MouseEventArgs e)
         {
@@ -268,5 +279,6 @@ namespace Auto
                 }
             }
         }
+
     }
 }
