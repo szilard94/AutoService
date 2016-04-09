@@ -150,15 +150,30 @@ namespace Auto
             }
         }
 
-        private void keres(object sender, EventArgs e)
+        private void alvazmuszaki_TextChanged(object sender, EventArgs e)
         {
-            ConnectToDB lekeres = new ConnectToDB();
-            string miszerint = "nev";
-            if(radioButton2.Checked)
+            if (alvazmuszaki.Text.Length == 17)
             {
-                miszerint = "alvazszam";
+                ConnectToDB lekeres = new ConnectToDB();
+                DataSet datas = lekeres.selectFrom("SELECT rendszam, marka, tipus, evjarat, nev, fax, telefon, mobil, megye, cim, email FROM Jarmuvek JOIN Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID WHERE alvazszam = " + alvazmuszaki.Text);
+                if (datas.Tables[0].Rows.Count != 0)
+                {
+                    muszakirendszam.Text = datas.Tables[0].Rows[0]["rendszam"].ToString();
+                    muszakimarka.Text = datas.Tables[0].Rows[0]["marka"].ToString();
+                    muszakitipus.Text = datas.Tables[0].Rows[0]["tipus"].ToString();
+                    muszakievjarat.Text = datas.Tables[0].Rows[0]["evjarat"].ToString();
+                   
+
+                  
+                }
+
             }
-            keresoeredmeny.DataSource = lekeres.selectFrom("nev AS Név, cim AS Cím, ceg AS Cég, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat", "Jarmuvek", "Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID", miszerint + " LIKE '%" + kereso.Text + "%'").Tables[0];
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
