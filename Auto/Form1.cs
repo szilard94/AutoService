@@ -76,12 +76,7 @@ namespace Auto
             tipus.Enabled = true;
             evjarat.Enabled = true;
             tulajnev.Enabled = true;
-            fax.Enabled = true;
-            telefon.Enabled = true;
-            mobil.Enabled = true;
-            email.Enabled = true;
-            megye.Enabled = true;
-            Cim.Enabled = true;
+           
         }
 
         private void ujalvaz_TextChanged(object sender, EventArgs e)
@@ -180,6 +175,19 @@ namespace Auto
                 kereso.MaxLength = 17;
             }
             keresoeredmeny.DataSource = lekeres.selectFrom("nev AS Név, cim AS Cím, ceg AS Cég, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat", "Jarmuvek", "Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID", miszerint + " LIKE '%" + kereso.Text + "%'").Tables[0];
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                fax.Enabled = true;
+                telefon.Enabled = true;
+                mobil.Enabled = true;
+                email.Enabled = true;
+                megye.Enabled = true;
+                Cim.Enabled = true;
+            }
         }
     }
 }
