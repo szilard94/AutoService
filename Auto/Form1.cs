@@ -115,11 +115,38 @@ namespace Auto
                     megye.Enabled = false;
                     Cim.Enabled = false;
                 }
+                
                 else
                 {
                     ujszervizInit();
 
                 }
+            }
+            else
+            {
+                rendszam.Enabled = false;
+                marka.Enabled = false;
+                tipus.Enabled = false;
+                evjarat.Enabled = false;
+                tulajnev.Enabled = false;
+                fax.Enabled = false;
+                telefon.Enabled = false;
+                mobil.Enabled = false;
+                email.Enabled = false;
+                megye.Enabled = false;
+                Cim.Enabled = false;
+
+                rendszam.Text = "";
+                marka.Text = "";
+                tipus.Text = "";
+                evjarat.Text = "";
+                tulajnev.Text = "";
+                fax.Text = "";
+                telefon.Text = "";
+                mobil.Text = "";
+                email.Text = "";
+                megye.Text = "";
+                Cim.Text = "";
             }
         }
     }
