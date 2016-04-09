@@ -85,6 +85,7 @@ namespace Auto
         {
             if (ujalvaz.Text.Length == 17)
             {
+                kmora.Enabled = true;
                 ConnectToDB lekeres = new ConnectToDB();
                 DataSet datas = lekeres.selectFrom("SELECT rendszam, marka, tipus, evjarat, nev, fax, telefon, mobil, megye, cim, email FROM Jarmuvek JOIN Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID WHERE alvazszam = " + ujalvaz.Text);
                 if (datas.Tables[0].Rows.Count != 0)
@@ -122,6 +123,7 @@ namespace Auto
             }
             else
             {
+                kmora.Enabled = false;
                 szerviznyitas.Enabled = false;
                 rendszam.Enabled = false;
                 marka.Enabled = false;
