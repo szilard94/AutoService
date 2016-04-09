@@ -31,13 +31,23 @@
             this.keresogomb = new System.Windows.Forms.Button();
             this.muszaki = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.nevkereso = new System.Windows.Forms.RadioButton();
+            this.keresoeredmeny = new System.Windows.Forms.DataGridView();
+            this.kereso = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.muszakilejarata = new System.Windows.Forms.DateTimePicker();
+            this.muszakiztatasideje = new System.Windows.Forms.DateTimePicker();
+            this.muszakiaktualizalas = new System.Windows.Forms.Button();
             this.muszakievjarat = new System.Windows.Forms.TextBox();
             this.muszakitipus = new System.Windows.Forms.TextBox();
             this.muszakimarka = new System.Windows.Forms.TextBox();
             this.muszakirendszam = new System.Windows.Forms.TextBox();
             this.alvazmuszaki = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.szerviznyitas = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -64,8 +74,12 @@
             this.rendszam = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ujalvaz = new System.Windows.Forms.TextBox();
+            this.beallitasok = new System.Windows.Forms.Button();
+            this.ujszerviz = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -92,7 +106,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.nevkereso);
             this.panel1.Controls.Add(this.keresoeredmeny);
@@ -102,28 +115,143 @@
             this.panel1.Size = new System.Drawing.Size(781, 474);
             this.panel1.TabIndex = 2;
             // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(139, 75);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(112, 17);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Alvázszám alapján";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // nevkereso
+            // 
+            this.nevkereso.AutoSize = true;
+            this.nevkereso.Checked = true;
+            this.nevkereso.Location = new System.Drawing.Point(13, 75);
+            this.nevkereso.Name = "nevkereso";
+            this.nevkereso.Size = new System.Drawing.Size(82, 17);
+            this.nevkereso.TabIndex = 2;
+            this.nevkereso.TabStop = true;
+            this.nevkereso.Text = "Név alapján";
+            this.nevkereso.UseVisualStyleBackColor = true;
+            // 
+            // keresoeredmeny
+            // 
+            this.keresoeredmeny.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.keresoeredmeny.Location = new System.Drawing.Point(12, 112);
+            this.keresoeredmeny.Name = "keresoeredmeny";
+            this.keresoeredmeny.Size = new System.Drawing.Size(751, 366);
+            this.keresoeredmeny.TabIndex = 1;
+            // 
+            // kereso
+            // 
+            this.kereso.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.kereso.Location = new System.Drawing.Point(13, 21);
+            this.kereso.Name = "kereso";
+            this.kereso.Size = new System.Drawing.Size(751, 20);
+            this.kereso.TabIndex = 0;
+            this.kereso.Text = "Kereső";
+            this.kereso.Click += new System.EventHandler(this.keresogomb_Click);
+            this.kereso.MouseClick += new System.Windows.Forms.MouseEventHandler(this.keresoUrit);
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.muszakilejarata);
+            this.panel2.Controls.Add(this.muszakiztatasideje);
+            this.panel2.Controls.Add(this.muszakiaktualizalas);
+            this.panel2.Controls.Add(this.muszakievjarat);
+            this.panel2.Controls.Add(this.muszakitipus);
+            this.panel2.Controls.Add(this.muszakimarka);
+            this.panel2.Controls.Add(this.muszakirendszam);
+            this.panel2.Controls.Add(this.alvazmuszaki);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(0, 80);
+            this.panel2.Location = new System.Drawing.Point(0, 89);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(778, 469);
             this.panel2.TabIndex = 3;
             this.panel2.Visible = false;
             // 
+            // muszakilejarata
+            // 
+            this.muszakilejarata.Location = new System.Drawing.Point(316, 432);
+            this.muszakilejarata.Name = "muszakilejarata";
+            this.muszakilejarata.Size = new System.Drawing.Size(200, 20);
+            this.muszakilejarata.TabIndex = 11;
+            // 
+            // muszakiztatasideje
+            // 
+            this.muszakiztatasideje.Location = new System.Drawing.Point(12, 432);
+            this.muszakiztatasideje.Name = "muszakiztatasideje";
+            this.muszakiztatasideje.Size = new System.Drawing.Size(200, 20);
+            this.muszakiztatasideje.TabIndex = 10;
+            this.muszakiztatasideje.Value = new System.DateTime(2016, 4, 9, 0, 0, 0, 0);
+            // 
+            // muszakiaktualizalas
+            // 
+            this.muszakiaktualizalas.Location = new System.Drawing.Point(613, 429);
+            this.muszakiaktualizalas.Name = "muszakiaktualizalas";
+            this.muszakiaktualizalas.Size = new System.Drawing.Size(75, 23);
+            this.muszakiaktualizalas.TabIndex = 9;
+            this.muszakiaktualizalas.Text = "Aktualizálás";
+            this.muszakiaktualizalas.UseVisualStyleBackColor = true;
+            // 
+            // muszakievjarat
+            // 
+            this.muszakievjarat.Enabled = false;
+            this.muszakievjarat.Location = new System.Drawing.Point(631, 376);
+            this.muszakievjarat.Name = "muszakievjarat";
+            this.muszakievjarat.Size = new System.Drawing.Size(130, 20);
+            this.muszakievjarat.TabIndex = 6;
+            // 
+            // muszakitipus
+            // 
+            this.muszakitipus.Enabled = false;
+            this.muszakitipus.Location = new System.Drawing.Point(436, 375);
+            this.muszakitipus.Name = "muszakitipus";
+            this.muszakitipus.Size = new System.Drawing.Size(135, 20);
+            this.muszakitipus.TabIndex = 5;
+            // 
+            // muszakimarka
+            // 
+            this.muszakimarka.Enabled = false;
+            this.muszakimarka.Location = new System.Drawing.Point(226, 375);
+            this.muszakimarka.Name = "muszakimarka";
+            this.muszakimarka.Size = new System.Drawing.Size(143, 20);
+            this.muszakimarka.TabIndex = 4;
+            // 
+            // muszakirendszam
+            // 
+            this.muszakirendszam.Enabled = false;
+            this.muszakirendszam.Location = new System.Drawing.Point(13, 375);
+            this.muszakirendszam.Name = "muszakirendszam";
+            this.muszakirendszam.Size = new System.Drawing.Size(147, 20);
+            this.muszakirendszam.TabIndex = 3;
+            // 
+            // alvazmuszaki
+            // 
+            this.alvazmuszaki.Location = new System.Drawing.Point(12, 323);
+            this.alvazmuszaki.MaxLength = 17;
+            this.alvazmuszaki.Name = "alvazmuszaki";
+            this.alvazmuszaki.Size = new System.Drawing.Size(147, 20);
+            this.alvazmuszaki.TabIndex = 2;
+            this.alvazmuszaki.TextChanged += new System.EventHandler(this.alvazmuszaki_TextChanged);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 17);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(761, 451);
+            this.dataGridView1.Size = new System.Drawing.Size(761, 290);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.checkBox2);
             this.panel3.Controls.Add(this.checkBox1);
-            this.panel3.Location = new System.Drawing.Point(3, 80);
+            this.panel3.Location = new System.Drawing.Point(3, 89);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(772, 454);
             this.panel3.TabIndex = 1;
@@ -148,26 +276,6 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // beallitasok
-            // 
-            this.beallitasok.Location = new System.Drawing.Point(236, 11);
-            this.beallitasok.Name = "beallitasok";
-            this.beallitasok.Size = new System.Drawing.Size(75, 23);
-            this.beallitasok.TabIndex = 4;
-            this.beallitasok.Text = "Beállitások";
-            this.beallitasok.UseVisualStyleBackColor = true;
-            this.beallitasok.Click += new System.EventHandler(this.beallitasok_Click);
-            // 
-            // ujszerviz
-            // 
-            this.ujszerviz.Location = new System.Drawing.Point(12, 51);
-            this.ujszerviz.Name = "ujszerviz";
-            this.ujszerviz.Size = new System.Drawing.Size(75, 23);
-            this.ujszerviz.TabIndex = 5;
-            this.ujszerviz.Text = "Új szerviz";
-            this.ujszerviz.UseVisualStyleBackColor = true;
-            this.ujszerviz.Click += new System.EventHandler(this.ujszerviz_Click);
             // 
             // panel4
             // 
@@ -196,7 +304,7 @@
             this.panel4.Controls.Add(this.rendszam);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.ujalvaz);
-            this.panel4.Location = new System.Drawing.Point(3, 75);
+            this.panel4.Location = new System.Drawing.Point(-1, 92);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(772, 446);
             this.panel4.TabIndex = 6;
@@ -417,13 +525,32 @@
             this.ujalvaz.TabIndex = 0;
             this.ujalvaz.TextChanged += new System.EventHandler(this.ujalvaz_TextChanged);
             // 
+            // beallitasok
+            // 
+            this.beallitasok.Location = new System.Drawing.Point(236, 11);
+            this.beallitasok.Name = "beallitasok";
+            this.beallitasok.Size = new System.Drawing.Size(75, 23);
+            this.beallitasok.TabIndex = 4;
+            this.beallitasok.Text = "Beállitások";
+            this.beallitasok.UseVisualStyleBackColor = true;
+            this.beallitasok.Click += new System.EventHandler(this.beallitasok_Click);
+            // 
+            // ujszerviz
+            // 
+            this.ujszerviz.Location = new System.Drawing.Point(357, 11);
+            this.ujszerviz.Name = "ujszerviz";
+            this.ujszerviz.Size = new System.Drawing.Size(75, 23);
+            this.ujszerviz.TabIndex = 5;
+            this.ujszerviz.Text = "Új szerviz";
+            this.ujszerviz.UseVisualStyleBackColor = true;
+            this.ujszerviz.Click += new System.EventHandler(this.ujszerviz_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ujszerviz);
             this.Controls.Add(this.beallitasok);
@@ -436,7 +563,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
