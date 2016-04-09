@@ -56,6 +56,17 @@ namespace Auto
             return ds;
         }
 
+        public DataSet selectFrom(string fields, string table, string join, string where)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT " + fields + " FROM " + table + " JOIN " + join + " WHERE " + where, cnn);
+            cnn.Open();
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+            cnn.Close();
+            return ds;
+        }
+
         public void closeConnection()
         {
             cnn.Close();
