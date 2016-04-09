@@ -147,7 +147,7 @@
             this.panel1.Controls.Add(this.kereso);
             this.panel1.Location = new System.Drawing.Point(2, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(781, 194);
+            this.panel1.Size = new System.Drawing.Size(781, 500);
             this.panel1.TabIndex = 2;
             // 
             // radioButton2
@@ -222,7 +222,7 @@
             this.panel2.Controls.Add(this.muszakirendszam);
             this.panel2.Controls.Add(this.alvazmuszaki);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(2, 61);
+            this.panel2.Location = new System.Drawing.Point(4, 58);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(778, 488);
             this.panel2.TabIndex = 3;
@@ -425,7 +425,7 @@
             this.panel4.Controls.Add(this.rendszam);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.ujalvaz);
-            this.panel4.Location = new System.Drawing.Point(5, 60);
+            this.panel4.Location = new System.Drawing.Point(2, 57);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(782, 501);
             this.panel4.TabIndex = 6;
@@ -748,7 +748,7 @@
             this.panel5.Controls.Add(this.textBox2);
             this.panel5.Controls.Add(this.label21);
             this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Location = new System.Drawing.Point(2, 58);
+            this.panel5.Location = new System.Drawing.Point(6, 48);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(775, 509);
             this.panel5.TabIndex = 8;
