@@ -85,6 +85,8 @@
             this.ujalvaz = new System.Windows.Forms.TextBox();
             this.beallitasok = new System.Windows.Forms.Button();
             this.ujszerviz = new System.Windows.Forms.Button();
+            this.kmora = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).BeginInit();
             this.panel2.SuspendLayout();
@@ -371,6 +373,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label20);
+            this.panel4.Controls.Add(this.kmora);
             this.panel4.Controls.Add(this.checkBox3);
             this.panel4.Controls.Add(this.ugyfellista);
             this.panel4.Controls.Add(this.szerviznyitas);
@@ -504,7 +508,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(57, 114);
+            this.label6.Location = new System.Drawing.Point(49, 114);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 13);
             this.label6.TabIndex = 17;
@@ -561,7 +565,7 @@
             // tulajnev
             // 
             this.tulajnev.Enabled = false;
-            this.tulajnev.Location = new System.Drawing.Point(25, 130);
+            this.tulajnev.Location = new System.Drawing.Point(13, 129);
             this.tulajnev.Name = "tulajnev";
             this.tulajnev.Size = new System.Drawing.Size(150, 20);
             this.tulajnev.TabIndex = 10;
@@ -570,7 +574,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(681, 53);
+            this.label5.Location = new System.Drawing.Point(578, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 9;
@@ -579,7 +583,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(486, 53);
+            this.label4.Location = new System.Drawing.Point(451, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 8;
@@ -588,7 +592,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(277, 53);
+            this.label3.Location = new System.Drawing.Point(252, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 7;
@@ -597,15 +601,15 @@
             // evjarat
             // 
             this.evjarat.Enabled = false;
-            this.evjarat.Location = new System.Drawing.Point(640, 69);
+            this.evjarat.Location = new System.Drawing.Point(567, 69);
             this.evjarat.Name = "evjarat";
-            this.evjarat.Size = new System.Drawing.Size(125, 20);
+            this.evjarat.Size = new System.Drawing.Size(64, 20);
             this.evjarat.TabIndex = 6;
             // 
             // tipus
             // 
             this.tipus.Enabled = false;
-            this.tipus.Location = new System.Drawing.Point(440, 69);
+            this.tipus.Location = new System.Drawing.Point(382, 69);
             this.tipus.Name = "tipus";
             this.tipus.Size = new System.Drawing.Size(144, 20);
             this.tipus.TabIndex = 5;
@@ -613,7 +617,7 @@
             // marka
             // 
             this.marka.Enabled = false;
-            this.marka.Location = new System.Drawing.Point(222, 69);
+            this.marka.Location = new System.Drawing.Point(199, 69);
             this.marka.Name = "marka";
             this.marka.Size = new System.Drawing.Size(148, 20);
             this.marka.TabIndex = 4;
@@ -672,6 +676,23 @@
             this.ujszerviz.Text = "Új szerviz";
             this.ujszerviz.UseVisualStyleBackColor = true;
             this.ujszerviz.Click += new System.EventHandler(this.ujszerviz_Click);
+            // 
+            // kmora
+            // 
+            this.kmora.Enabled = false;
+            this.kmora.Location = new System.Drawing.Point(668, 69);
+            this.kmora.Name = "kmora";
+            this.kmora.Size = new System.Drawing.Size(100, 20);
+            this.kmora.TabIndex = 29;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(698, 53);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(53, 13);
+            this.label20.TabIndex = 30;
+            this.label20.Text = "Km Állása";
             // 
             // Form1
             // 
@@ -761,6 +782,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView ugyfellista;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox kmora;
     }
 }
 
