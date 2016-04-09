@@ -89,7 +89,6 @@
             this.ujszerviz = new System.Windows.Forms.Button();
             this.szerviztortenet = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.szervizrendszam = new System.Windows.Forms.RadioButton();
             this.szervizalvazszam = new System.Windows.Forms.RadioButton();
@@ -108,6 +107,9 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).BeginInit();
             this.panel2.SuspendLayout();
@@ -729,7 +731,9 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.radioButton1);
+            this.panel5.Controls.Add(this.label27);
+            this.panel5.Controls.Add(this.label26);
+            this.panel5.Controls.Add(this.checkBox4);
             this.panel5.Controls.Add(this.listBox1);
             this.panel5.Controls.Add(this.szervizrendszam);
             this.panel5.Controls.Add(this.szervizalvazszam);
@@ -753,17 +757,6 @@
             this.panel5.Size = new System.Drawing.Size(775, 509);
             this.panel5.TabIndex = 8;
             this.panel5.Visible = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(436, 116);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(154, 17);
-            this.radioButton1.TabIndex = 20;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Keresés a lezártak között is";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // listBox1
             // 
@@ -794,6 +787,7 @@
             this.szervizalvazszam.TabStop = true;
             this.szervizalvazszam.Text = "Alvázszám";
             this.szervizalvazszam.UseVisualStyleBackColor = true;
+            this.szervizalvazszam.CheckedChanged += new System.EventHandler(this.szervizkereso);
             // 
             // textBox5
             // 
@@ -801,14 +795,26 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(346, 20);
             this.textBox5.TabIndex = 16;
+            this.textBox5.TextChanged += new System.EventHandler(this.szervizkereso);
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(7, 3);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView2.RowTemplate.ReadOnly = true;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(380, 212);
             this.dataGridView2.TabIndex = 15;
+            this.dataGridView2.Click += new System.EventHandler(this.kivalasztas);
             // 
             // hozzaad
             // 
@@ -920,6 +926,35 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(408, 49);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(217, 17);
+            this.checkBox4.TabIndex = 20;
+            this.checkBox4.Text = "Keressen a lezárt szervízelések között is";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.szervizkereso);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(11, 234);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(92, 13);
+            this.label26.TabIndex = 21;
+            this.label26.Text = "Kiválasztott jármű:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(104, 235);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(10, 13);
+            this.label27.TabIndex = 22;
+            this.label27.Text = "-";
             // 
             // Form1
             // 
@@ -1036,7 +1071,9 @@
         private System.Windows.Forms.RadioButton szervizrendszam;
         private System.Windows.Forms.RadioButton szervizalvazszam;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
     }
 }
 

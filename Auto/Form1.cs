@@ -26,7 +26,7 @@ namespace Auto
             panel3.Visible = false;
             panel4.Visible = false;
             panel5.Visible = false;
-          }
+        }
 
         private void muszaki_Click(object sender, EventArgs e)
         {
@@ -280,5 +280,29 @@ namespace Auto
             }
         }
 
+        private void szervizkereso(object sender, EventArgs e)
+        {
+            ConnectToDB lekeres = new ConnectToDB();
+            string miszerint = "alvazszam";
+            textBox5.MaxLength = 17;
+            if (szervizrendszam.Checked)
+            {
+                miszerint = "rendszam";
+                textBox5.MaxLength = 9;
+            }
+            if (checkBox4.Checked)
+            {
+                dataGridView2.DataSource = lekeres.selectFrom("SZID, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat, datum AS Szervizelés", "Szerviz", "Jarmuvek ON Jarmuvek.AID = Szerviz.AID", miszerint + " LIKE '%" + textBox5.Text.ToString() + "%' ORDER BY datum DESC").Tables[0];
+            }
+            else
+            {
+                dataGridView2.DataSource = lekeres.selectFrom("SZID, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat, datum AS Szervizelés", "Szerviz", "Jarmuvek ON Jarmuvek.AID = Szerviz.AID", miszerint + " LIKE '%" + textBox5.Text.ToString() + "%' AND lezarva = 0 ORDER BY datum DESC").Tables[0];
+            }
+        }
+
+        private void kivalasztas(object sender, EventArgs e)
+        {
+            label27.Text = dataGridView2.CurrentRow.Cells["Rendszám"].Value.ToString() + " - " + dataGridView2.CurrentRow.Cells["Alvázszám"].Value.ToString();
+        }
     }
 }
