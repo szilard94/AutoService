@@ -22,7 +22,6 @@ namespace Auto
         {
             panel2.Visible = false;
             panel1.Visible = true;
-
             panel3.Visible = false;
             panel4.Visible = false;
         }
