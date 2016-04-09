@@ -121,9 +121,9 @@
             // 
             // keresogomb
             // 
-            this.keresogomb.Location = new System.Drawing.Point(12, 12);
+            this.keresogomb.Location = new System.Drawing.Point(20, 12);
             this.keresogomb.Name = "keresogomb";
-            this.keresogomb.Size = new System.Drawing.Size(75, 23);
+            this.keresogomb.Size = new System.Drawing.Size(85, 23);
             this.keresogomb.TabIndex = 0;
             this.keresogomb.Text = "Kereső";
             this.keresogomb.UseVisualStyleBackColor = true;
@@ -131,9 +131,9 @@
             // 
             // muszaki
             // 
-            this.muszaki.Location = new System.Drawing.Point(120, 11);
+            this.muszaki.Location = new System.Drawing.Point(178, 12);
             this.muszaki.Name = "muszaki";
-            this.muszaki.Size = new System.Drawing.Size(75, 23);
+            this.muszaki.Size = new System.Drawing.Size(94, 23);
             this.muszaki.TabIndex = 1;
             this.muszaki.Text = "Műszaki";
             this.muszaki.UseVisualStyleBackColor = true;
@@ -699,9 +699,9 @@
             // 
             // beallitasok
             // 
-            this.beallitasok.Location = new System.Drawing.Point(236, 11);
+            this.beallitasok.Location = new System.Drawing.Point(658, 12);
             this.beallitasok.Name = "beallitasok";
-            this.beallitasok.Size = new System.Drawing.Size(75, 23);
+            this.beallitasok.Size = new System.Drawing.Size(98, 23);
             this.beallitasok.TabIndex = 4;
             this.beallitasok.Text = "Beállitások";
             this.beallitasok.UseVisualStyleBackColor = true;
@@ -709,9 +709,9 @@
             // 
             // ujszerviz
             // 
-            this.ujszerviz.Location = new System.Drawing.Point(357, 11);
+            this.ujszerviz.Location = new System.Drawing.Point(337, 12);
             this.ujszerviz.Name = "ujszerviz";
-            this.ujszerviz.Size = new System.Drawing.Size(75, 23);
+            this.ujszerviz.Size = new System.Drawing.Size(106, 23);
             this.ujszerviz.TabIndex = 5;
             this.ujszerviz.Text = "Új szerviz";
             this.ujszerviz.UseVisualStyleBackColor = true;
@@ -719,9 +719,9 @@
             // 
             // szerviztortenet
             // 
-            this.szerviztortenet.Location = new System.Drawing.Point(473, 11);
+            this.szerviztortenet.Location = new System.Drawing.Point(505, 12);
             this.szerviztortenet.Name = "szerviztortenet";
-            this.szerviztortenet.Size = new System.Drawing.Size(75, 23);
+            this.szerviztortenet.Size = new System.Drawing.Size(95, 23);
             this.szerviztortenet.TabIndex = 7;
             this.szerviztortenet.Text = "Szerviztörténet";
             this.szerviztortenet.UseVisualStyleBackColor = true;
