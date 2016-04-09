@@ -173,9 +173,11 @@ namespace Auto
         {
             ConnectToDB lekeres = new ConnectToDB();
             string miszerint = "nev";
+            kereso.MaxLength = 50;
             if (radioButton2.Checked)
             {
                 miszerint = "alvazszam";
+                kereso.MaxLength = 17;
             }
             keresoeredmeny.DataSource = lekeres.selectFrom("nev AS Név, cim AS Cím, ceg AS Cég, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat", "Jarmuvek", "Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID", miszerint + " LIKE '%" + kereso.Text + "%'").Tables[0];
         }
