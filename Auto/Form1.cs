@@ -71,12 +71,14 @@ namespace Auto
             megye.Text = "";
             Cim.Text = "";
 
+            szerviznyitas.Enabled = false;
+
             rendszam.Enabled = true;
             marka.Enabled = true;
             tipus.Enabled = true;
             evjarat.Enabled = true;
             tulajnev.Enabled = true;
-           
+            checkBox3.Enabled = true;
         }
 
         private void ujalvaz_TextChanged(object sender, EventArgs e)
@@ -110,16 +112,17 @@ namespace Auto
                     email.Enabled = false;
                     megye.Enabled = false;
                     Cim.Enabled = false;
+                    szerviznyitas.Enabled = true;
                 }
                 
                 else
                 {
                     ujszervizInit();
-
                 }
             }
             else
             {
+                szerviznyitas.Enabled = false;
                 rendszam.Enabled = false;
                 marka.Enabled = false;
                 tipus.Enabled = false;
@@ -131,6 +134,8 @@ namespace Auto
                 email.Enabled = false;
                 megye.Enabled = false;
                 Cim.Enabled = false;
+                checkBox3.Enabled = false;
+                checkBox3.Checked = false;
 
                 rendszam.Text = "";
                 marka.Text = "";
@@ -157,7 +162,9 @@ namespace Auto
                     muszakirendszam.Text = datas.Tables[0].Rows[0]["rendszam"].ToString();
                     muszakimarka.Text = datas.Tables[0].Rows[0]["marka"].ToString();
                     muszakitipus.Text = datas.Tables[0].Rows[0]["tipus"].ToString();
-                    muszakievjarat.Text = datas.Tables[0].Rows[0]["evjarat"].ToString(); 
+                    muszakievjarat.Text = datas.Tables[0].Rows[0]["evjarat"].ToString();
+
+                    szerviznyitas.Enabled = true;
                 }
 
             }
@@ -187,7 +194,50 @@ namespace Auto
                 email.Enabled = true;
                 megye.Enabled = true;
                 Cim.Enabled = true;
+                ugyfellista.Enabled = false;
+                ugyfellista.DataSource = null;
+                szerviznyitas.Enabled = true;
+
+                fax.Text = "";
+                telefon.Text = "";
+                mobil.Text = "";
+                email.Text = "";
+                megye.Text = "";
+                Cim.Text = "";
             }
+            else
+            {
+                szerviznyitas.Enabled = false;
+                fax.Enabled = false;
+                telefon.Enabled = false;
+                mobil.Enabled = false;
+                email.Enabled = false;
+                megye.Enabled = false;
+                Cim.Enabled = false;
+                ugyfellista.Enabled = true;
+            }
+        }
+
+        private void ugyfeltKeres(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked == false && tulajnev.Enabled == true)
+            {
+                ugyfellista.Enabled = true;
+                ConnectToDB lekeres = new ConnectToDB();
+                ugyfellista.DataSource = lekeres.selectFrom("SELECT nev AS Név, ceg AS Cég, fax AS Fax, telefon AS Telefon, mobil AS Mobil, email AS Email, megye AS Megye, cim AS Cím FROM Ugyfelek WHERE nev LIKE '%" + tulajnev.Text + "%'").Tables[0];
+            }
+        }
+
+        private void ugyfellista_Click(object sender, EventArgs e)
+        {
+            tulajnev.Text = ugyfellista.CurrentRow.Cells["Név"].Value.ToString();
+            fax.Text = ugyfellista.CurrentRow.Cells["Fax"].Value.ToString();
+            telefon.Text = ugyfellista.CurrentRow.Cells["Telefon"].Value.ToString();
+            mobil.Text = ugyfellista.CurrentRow.Cells["Mobil"].Value.ToString();
+            email.Text = ugyfellista.CurrentRow.Cells["Email"].Value.ToString();
+            megye.Text = ugyfellista.CurrentRow.Cells["Megye"].Value.ToString();
+            Cim.Text = ugyfellista.CurrentRow.Cells["Cím"].Value.ToString();
+            szerviznyitas.Enabled = true;
         }
     }
 }
