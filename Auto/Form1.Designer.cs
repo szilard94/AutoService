@@ -445,6 +445,7 @@
             this.szerviznyitas.TabIndex = 24;
             this.szerviznyitas.Text = "Szerviznyitas";
             this.szerviznyitas.UseVisualStyleBackColor = true;
+            this.szerviznyitas.Click += new System.EventHandler(this.szerviznyitas_Click);
             // 
             // label12
             // 

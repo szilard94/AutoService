@@ -67,6 +67,16 @@ namespace Auto
             return ds;
         }
 
+        public void insertInto (string table, string cells, string values)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cnn;
+            cmd.CommandText = "INSERT INTO " + table + "(" + cells +")   VALUES(" + values +")";
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
         public void closeConnection()
         {
             cnn.Close();

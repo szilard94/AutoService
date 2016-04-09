@@ -239,5 +239,14 @@ namespace Auto
             Cim.Text = ugyfellista.CurrentRow.Cells["Cím"].Value.ToString();
             szerviznyitas.Enabled = true;
         }
+
+        private void szerviznyitas_Click(object sender, EventArgs e)
+        {
+            if(tulajnev.Enabled == false)
+            {
+                ConnectToDB insert = new ConnectToDB();
+                insert.insertInto("Szerviz","AID, datum, kmOra", "0,GETDATE(),0");
+            }
+        }
     }
 }
