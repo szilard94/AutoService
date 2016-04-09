@@ -15,7 +15,7 @@ namespace Auto
         {
             InitializeComponent();
             ConnectToDB lekeres = new ConnectToDB();
-            keresoeredmeny.DataSource = lekeres.selectFrom("*",  "Jarmuvek").Tables[0];
+            keresoeredmeny.DataSource = lekeres.selectFrom("nev AS Név, cim AS Cím, ceg AS Cég, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat", "Jarmuvek", "Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID", "1=1").Tables[0];
 
         }
 
@@ -162,19 +162,22 @@ namespace Auto
                     muszakirendszam.Text = datas.Tables[0].Rows[0]["rendszam"].ToString();
                     muszakimarka.Text = datas.Tables[0].Rows[0]["marka"].ToString();
                     muszakitipus.Text = datas.Tables[0].Rows[0]["tipus"].ToString();
-                    muszakievjarat.Text = datas.Tables[0].Rows[0]["evjarat"].ToString();
-                   
-
-                  
+                    muszakievjarat.Text = datas.Tables[0].Rows[0]["evjarat"].ToString(); 
                 }
 
             }
             
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void keres(object sender, EventArgs e)
         {
-
+            ConnectToDB lekeres = new ConnectToDB();
+            string miszerint = "nev";
+            if (radioButton2.Checked)
+            {
+                miszerint = "alvazszam";
+            }
+            keresoeredmeny.DataSource = lekeres.selectFrom("nev AS Név, cim AS Cím, ceg AS Cég, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat", "Jarmuvek", "Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID", miszerint + " LIKE '%" + kereso.Text + "%'").Tables[0];
         }
     }
 }

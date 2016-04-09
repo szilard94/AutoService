@@ -140,6 +140,17 @@
             // 
             // keresoeredmeny
             // 
+            this.keresoeredmeny.AllowUserToAddRows = false;
+            this.keresoeredmeny.AllowUserToDeleteRows = false;
+            this.keresoeredmeny.AllowUserToResizeColumns = false;
+            this.keresoeredmeny.AllowUserToResizeRows = false;
+            this.keresoeredmeny.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.keresoeredmeny.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.keresoeredmeny.MultiSelect = false;
+            this.keresoeredmeny.ReadOnly = true;
+            this.keresoeredmeny.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.keresoeredmeny.RowTemplate.ReadOnly = true;
+            this.keresoeredmeny.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.keresoeredmeny.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.keresoeredmeny.Location = new System.Drawing.Point(12, 112);
             this.keresoeredmeny.Name = "keresoeredmeny";
@@ -156,6 +167,7 @@
             this.kereso.Text = "Kereső";
             this.kereso.Click += new System.EventHandler(this.keresogomb_Click);
             this.kereso.MouseClick += new System.Windows.Forms.MouseEventHandler(this.keresoUrit);
+            this.kereso.TextChanged += new System.EventHandler(this.keres);
             // 
             // panel2
             // 
@@ -560,7 +572,6 @@
             this.Controls.Add(this.panel3);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).EndInit();
