@@ -31,17 +31,8 @@
             this.keresogomb = new System.Windows.Forms.Button();
             this.muszaki = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.nevkereso = new System.Windows.Forms.RadioButton();
-            this.keresoeredmeny = new System.Windows.Forms.DataGridView();
-            this.kereso = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.beallitasok = new System.Windows.Forms.Button();
-            this.ujszerviz = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.szerviznyitas = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -68,12 +59,21 @@
             this.rendszam = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ujalvaz = new System.Windows.Forms.TextBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.nevkereso = new System.Windows.Forms.RadioButton();
+            this.keresoeredmeny = new System.Windows.Forms.DataGridView();
+            this.kereso = new System.Windows.Forms.TextBox();
+            this.beallitasok = new System.Windows.Forms.Button();
+            this.ujszerviz = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).BeginInit();
             this.SuspendLayout();
             // 
             // keresogomb
@@ -98,6 +98,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.nevkereso);
             this.panel1.Controls.Add(this.keresoeredmeny);
@@ -107,114 +108,26 @@
             this.panel1.Size = new System.Drawing.Size(781, 487);
             this.panel1.TabIndex = 2;
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(139, 75);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(112, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Alvázszám alapján";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // nevkereso
-            // 
-            this.nevkereso.AutoSize = true;
-            this.nevkereso.Checked = true;
-            this.nevkereso.Location = new System.Drawing.Point(13, 75);
-            this.nevkereso.Name = "nevkereso";
-            this.nevkereso.Size = new System.Drawing.Size(82, 17);
-            this.nevkereso.TabIndex = 2;
-            this.nevkereso.TabStop = true;
-            this.nevkereso.Text = "Név alapján";
-            this.nevkereso.UseVisualStyleBackColor = true;
-            // 
-            // keresoeredmeny
-            // 
-            this.keresoeredmeny.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.keresoeredmeny.Location = new System.Drawing.Point(12, 112);
-            this.keresoeredmeny.Name = "keresoeredmeny";
-            this.keresoeredmeny.Size = new System.Drawing.Size(751, 366);
-            this.keresoeredmeny.TabIndex = 1;
-            // 
-            // kereso
-            // 
-            this.kereso.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.kereso.Location = new System.Drawing.Point(13, 21);
-            this.kereso.Name = "kereso";
-            this.kereso.Size = new System.Drawing.Size(751, 20);
-            this.kereso.TabIndex = 0;
-            this.kereso.Text = "Kereső";
-            this.kereso.Click += new System.EventHandler(this.keresogomb_Click);
-            this.kereso.MouseClick += new System.Windows.Forms.MouseEventHandler(this.keresoUrit);
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(0, 80);
+            this.panel2.Location = new System.Drawing.Point(44, 135);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(778, 469);
             this.panel2.TabIndex = 3;
             this.panel2.Visible = false;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(761, 451);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.checkBox2);
             this.panel3.Controls.Add(this.checkBox1);
-            this.panel3.Location = new System.Drawing.Point(3, 80);
+            this.panel3.Location = new System.Drawing.Point(27, 47);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(772, 454);
             this.panel3.TabIndex = 1;
             this.panel3.Visible = false;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(9, 112);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(11, 65);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // beallitasok
-            // 
-            this.beallitasok.Location = new System.Drawing.Point(236, 11);
-            this.beallitasok.Name = "beallitasok";
-            this.beallitasok.Size = new System.Drawing.Size(75, 23);
-            this.beallitasok.TabIndex = 4;
-            this.beallitasok.Text = "Beállitások";
-            this.beallitasok.UseVisualStyleBackColor = true;
-            this.beallitasok.Click += new System.EventHandler(this.beallitasok_Click);
-            // 
-            // ujszerviz
-            // 
-            this.ujszerviz.Location = new System.Drawing.Point(12, 51);
-            this.ujszerviz.Name = "ujszerviz";
-            this.ujszerviz.Size = new System.Drawing.Size(75, 23);
-            this.ujszerviz.TabIndex = 5;
-            this.ujszerviz.Text = "Új szerviz";
-            this.ujszerviz.UseVisualStyleBackColor = true;
-            this.ujszerviz.Click += new System.EventHandler(this.ujszerviz_Click);
             // 
             // panel4
             // 
@@ -243,7 +156,7 @@
             this.panel4.Controls.Add(this.rendszam);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.ujalvaz);
-            this.panel4.Location = new System.Drawing.Point(3, 75);
+            this.panel4.Location = new System.Drawing.Point(9, 65);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(772, 446);
             this.panel4.TabIndex = 6;
@@ -464,14 +377,113 @@
             this.ujalvaz.TabIndex = 0;
             this.ujalvaz.TextChanged += new System.EventHandler(this.ujalvaz_TextChanged);
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(9, 112);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(80, 17);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(11, 65);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(761, 451);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(139, 75);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(112, 17);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Alvázszám alapján";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // nevkereso
+            // 
+            this.nevkereso.AutoSize = true;
+            this.nevkereso.Checked = true;
+            this.nevkereso.Location = new System.Drawing.Point(13, 75);
+            this.nevkereso.Name = "nevkereso";
+            this.nevkereso.Size = new System.Drawing.Size(82, 17);
+            this.nevkereso.TabIndex = 2;
+            this.nevkereso.TabStop = true;
+            this.nevkereso.Text = "Név alapján";
+            this.nevkereso.UseVisualStyleBackColor = true;
+            // 
+            // keresoeredmeny
+            // 
+            this.keresoeredmeny.AllowUserToAddRows = false;
+            this.keresoeredmeny.AllowUserToDeleteRows = false;
+            this.keresoeredmeny.AllowUserToResizeColumns = false;
+            this.keresoeredmeny.AllowUserToResizeRows = false;
+            this.keresoeredmeny.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.keresoeredmeny.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.keresoeredmeny.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.keresoeredmeny.Location = new System.Drawing.Point(12, 112);
+            this.keresoeredmeny.MultiSelect = false;
+            this.keresoeredmeny.Name = "keresoeredmeny";
+            this.keresoeredmeny.ReadOnly = true;
+            this.keresoeredmeny.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.keresoeredmeny.RowTemplate.ReadOnly = true;
+            this.keresoeredmeny.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.keresoeredmeny.Size = new System.Drawing.Size(751, 366);
+            this.keresoeredmeny.TabIndex = 1;
+            // 
+            // kereso
+            // 
+            this.kereso.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.kereso.Location = new System.Drawing.Point(13, 21);
+            this.kereso.Name = "kereso";
+            this.kereso.Size = new System.Drawing.Size(751, 20);
+            this.kereso.TabIndex = 0;
+            this.kereso.Text = "Kereső";
+            this.kereso.Click += new System.EventHandler(this.keresogomb_Click);
+            this.kereso.MouseClick += new System.Windows.Forms.MouseEventHandler(this.keresoUrit);
+            this.kereso.TextChanged += new System.EventHandler(this.keres);
+            // 
+            // beallitasok
+            // 
+            this.beallitasok.Location = new System.Drawing.Point(236, 11);
+            this.beallitasok.Name = "beallitasok";
+            this.beallitasok.Size = new System.Drawing.Size(75, 23);
+            this.beallitasok.TabIndex = 4;
+            this.beallitasok.Text = "Beállitások";
+            this.beallitasok.UseVisualStyleBackColor = true;
+            this.beallitasok.Click += new System.EventHandler(this.beallitasok_Click);
+            // 
+            // ujszerviz
+            // 
+            this.ujszerviz.Location = new System.Drawing.Point(12, 51);
+            this.ujszerviz.Name = "ujszerviz";
+            this.ujszerviz.Size = new System.Drawing.Size(75, 23);
+            this.ujszerviz.TabIndex = 5;
+            this.ujszerviz.Text = "Új szerviz";
+            this.ujszerviz.UseVisualStyleBackColor = true;
+            this.ujszerviz.Click += new System.EventHandler(this.ujszerviz_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.ujszerviz);
             this.Controls.Add(this.beallitasok);
             this.Controls.Add(this.panel1);
@@ -481,13 +493,13 @@
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).EndInit();
             this.ResumeLayout(false);
 
         }

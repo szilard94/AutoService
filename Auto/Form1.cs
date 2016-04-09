@@ -15,7 +15,7 @@ namespace Auto
         {
             InitializeComponent();
             ConnectToDB lekeres = new ConnectToDB();
-            keresoeredmeny.DataSource = lekeres.selectFrom("*", "Jarmuvek").Tables[0];
+            keresoeredmeny.DataSource = lekeres.selectFrom("nev AS Név, cim AS Cím, ceg AS Cég, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat", "Jarmuvek", "Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID", "1=1").Tables[0];
         }
 
         private void keresogomb_Click(object sender, EventArgs e)
@@ -148,6 +148,17 @@ namespace Auto
                 megye.Text = "";
                 Cim.Text = "";
             }
+        }
+
+        private void keres(object sender, EventArgs e)
+        {
+            ConnectToDB lekeres = new ConnectToDB();
+            string miszerint = "nev";
+            if(radioButton2.Checked)
+            {
+                miszerint = "alvazszam";
+            }
+            keresoeredmeny.DataSource = lekeres.selectFrom("nev AS Név, cim AS Cím, ceg AS Cég, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat", "Jarmuvek", "Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID", miszerint + " LIKE '%" + kereso.Text + "%'").Tables[0];
         }
     }
 }
