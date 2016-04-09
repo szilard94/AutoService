@@ -87,7 +87,7 @@ namespace Auto
             {
                 kmora.Enabled = true;
                 ConnectToDB lekeres = new ConnectToDB();
-                DataSet datas = lekeres.selectFrom("SELECT rendszam, marka, tipus, evjarat, nev, fax, telefon, mobil, megye, cim, email FROM Jarmuvek JOIN Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID WHERE alvazszam = " + ujalvaz.Text);
+                DataSet datas = lekeres.selectFrom("SELECT rendszam, marka, tipus, evjarat, nev, fax, telefon, mobil, megye, cim, email FROM Jarmuvek JOIN Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID WHERE alvazszam = '" + ujalvaz.Text.ToString() + "'");
                 if (datas.Tables[0].Rows.Count != 0)
                 {
                     rendszam.Text = datas.Tables[0].Rows[0]["rendszam"].ToString();
@@ -158,7 +158,7 @@ namespace Auto
             if (alvazmuszaki.Text.Length == 17)
             {
                 ConnectToDB lekeres = new ConnectToDB();
-                DataSet datas = lekeres.selectFrom("SELECT rendszam, marka, tipus, evjarat, nev, fax, telefon, mobil, megye, cim, email FROM Jarmuvek JOIN Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID WHERE alvazszam = " + alvazmuszaki.Text);
+                DataSet datas = lekeres.selectFrom("SELECT rendszam, marka, tipus, evjarat, nev, fax, telefon, mobil, megye, cim, email FROM Jarmuvek JOIN Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID WHERE alvazszam = '" + alvazmuszaki.Text.ToString() + "'");
                 if (datas.Tables[0].Rows.Count != 0)
                 {
                     muszakirendszam.Text = datas.Tables[0].Rows[0]["rendszam"].ToString();
@@ -226,7 +226,7 @@ namespace Auto
             {
                 ugyfellista.Enabled = true;
                 ConnectToDB lekeres = new ConnectToDB();
-                ugyfellista.DataSource = lekeres.selectFrom("SELECT nev AS Név, ceg AS Cég, fax AS Fax, telefon AS Telefon, mobil AS Mobil, email AS Email, megye AS Megye, cim AS Cím FROM Ugyfelek WHERE nev LIKE '%" + tulajnev.Text + "%'").Tables[0];
+                ugyfellista.DataSource = lekeres.selectFrom("SELECT UID, nev AS Név, ceg AS Cég, fax AS Fax, telefon AS Telefon, mobil AS Mobil, email AS Email, megye AS Megye, cim AS Cím FROM Ugyfelek WHERE nev LIKE '%" + tulajnev.Text + "%'").Tables[0];
             }
         }
 
@@ -246,10 +246,26 @@ namespace Auto
         {
             if(tulajnev.Enabled == false)
             {
-                ConnectToDB select = new ConnectToDB();
-                string AID = select.selectFrom("AID", "Jarmuvek", "alvazszam = " + ujalvaz.Text).Tables[0].Rows[0]["AID"].ToString();
-                ConnectToDB insert = new ConnectToDB();
-                insert.insertInto("Szerviz","AID, datum, kmOra", AID + ",GETDATE(),0");
+                ConnectToDB kapcsolat = new ConnectToDB();
+                string AID = kapcsolat.selectFrom("AID", "Jarmuvek", "alvazszam = '" + ujalvaz.Text.ToString() + "'").Tables[0].Rows[0]["AID"].ToString();
+                kapcsolat.insertInto("Szerviz","AID, datum, kmOra", AID + ",GETDATE()," + kmora.Text.ToString());
+
+                MessageBox.Show("Sikeres hozzáadás, később szerkeztheted.", "Siker", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ujalvaz.Text = "";
+            }
+            else
+            {
+                if(checkBox3.Checked == false)
+                {
+                    ConnectToDB kapcsolat = new ConnectToDB();
+                    kapcsolat.insertInto("Jarmuvek", "UID, rendszam, alvazszam, marka, tipus, evjarat", ugyfellista.CurrentRow.Cells["UID"].Value.ToString() + ",'"
+                                    + rendszam.Text.ToString() + "','" + ujalvaz.Text.ToString() + "','" + marka.Text.ToString() + "','"
+                                    + tipus.Text.ToString() + "'," + evjarat.Text.ToString());
+                    string AID = kapcsolat.selectFrom("AID", "Jarmuvek", "alvazszam = '" + ujalvaz.Text.ToString() + "'").Tables[0].Rows[0]["AID"].ToString();
+                    kapcsolat.insertInto("Szerviz", "AID, datum, kmOra", AID + ",GETDATE()," + kmora.Text.ToString());
+                    MessageBox.Show("Sikeres hozzáadás, később szerkeztheted. (Új autó mentése sikeres!)", "Siker", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ujalvaz.Text = "";
+                }
             }
         }
     }

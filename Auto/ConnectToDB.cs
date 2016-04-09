@@ -71,7 +71,7 @@ namespace Auto
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cnn;
-            cmd.CommandText = "INSERT INTO " + table + "(" + cells +")   VALUES(" + values +")";
+            cmd.CommandText = "INSERT INTO " + table + "(" + cells +")   VALUES(" + values + ")";
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
