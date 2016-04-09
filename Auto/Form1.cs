@@ -149,5 +149,31 @@ namespace Auto
                 Cim.Text = "";
             }
         }
+
+        private void alvazmuszaki_TextChanged(object sender, EventArgs e)
+        {
+            if (alvazmuszaki.Text.Length == 17)
+            {
+                ConnectToDB lekeres = new ConnectToDB();
+                DataSet datas = lekeres.selectFrom("SELECT rendszam, marka, tipus, evjarat, nev, fax, telefon, mobil, megye, cim, email FROM Jarmuvek JOIN Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID WHERE alvazszam = " + alvazmuszaki.Text);
+                if (datas.Tables[0].Rows.Count != 0)
+                {
+                    muszakirendszam.Text = datas.Tables[0].Rows[0]["rendszam"].ToString();
+                    muszakimarka.Text = datas.Tables[0].Rows[0]["marka"].ToString();
+                    muszakitipus.Text = datas.Tables[0].Rows[0]["tipus"].ToString();
+                    muszakievjarat.Text = datas.Tables[0].Rows[0]["evjarat"].ToString();
+                   
+
+                  
+                }
+
+            }
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
