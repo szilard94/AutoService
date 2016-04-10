@@ -17,6 +17,7 @@ namespace Auto
             ConnectToDB lekeres = new ConnectToDB();
             keresoeredmeny.DataSource = lekeres.selectFrom("nev AS Név, cim AS Cím, ceg AS Cég, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat", "Jarmuvek", "Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID", "1=1").Tables[0];
             frissit();
+            szervizkereso(null, null);
         }
 
         private void keresogomb_Click(object sender, EventArgs e)
@@ -337,6 +338,7 @@ namespace Auto
             }
             label27.Text = dataGridView2.CurrentRow.Cells["Rendszám"].Value.ToString() + " - " + dataGridView2.CurrentRow.Cells["Alvázszám"].Value.ToString();
             DataSet adatok = kapcsolat.selectFrom("munkalatNeve, munkaAr", "Munkalatok", "SZID = '" + dataGridView2.CurrentRow.Cells["SZID"].Value.ToString() + "'");
+            listBox1.Items.Clear();
             for (int i = 0; i < adatok.Tables[0].Rows.Count; i++)
             {
                 listBox1.Items.Add(adatok.Tables[0].Rows[i]["munkalatNeve"].ToString() + " - " + adatok.Tables[0].Rows[i]["munkaAr"].ToString() + " Ft");

@@ -493,6 +493,7 @@
             this.ugyfellista.ReadOnly = true;
             this.ugyfellista.RowTemplate.ReadOnly = true;
             this.ugyfellista.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ugyfellista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ugyfellista.Size = new System.Drawing.Size(542, 201);
             this.ugyfellista.TabIndex = 27;
             this.ugyfellista.Click += new System.EventHandler(this.ugyfellista_Click);
