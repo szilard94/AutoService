@@ -52,6 +52,7 @@ namespace Auto
             panel3.Visible = false;
             panel4.Visible = false;
             panel5.Visible = false;
+            this.WindowState = FormWindowState.Normal;
         }
 
         private void beallitasok_Click(object sender, EventArgs e)
