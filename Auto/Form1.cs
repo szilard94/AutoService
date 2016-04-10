@@ -386,7 +386,7 @@ namespace Auto
                 textBox1.Enabled = false;
                 lezaras.Enabled = false;
             }
-            label27.Text = dataGridView2.CurrentRow.Cells["Rendszám"].Value.ToString() + " - " + dataGridView2.CurrentRow.Cells["Alvázszám"].Value.ToString();
+            label27.Text = dataGridView2.CurrentRow.Cells["Rendszám"].Value.ToString() + " - " + dataGridView2.CurrentRow.Cells["Alvázszám"].Value.ToString() + "             Szerviznyitás dátuma: " + Convert.ToDateTime(dataGridView2.CurrentRow.Cells["Szervizelés"].Value.ToString()).ToString("yyyy-MM-dd");
             DataSet adatok = kapcsolat.selectFrom("munkalatNeve, munkaAr", "Munkalatok", "SZID = '" + dataGridView2.CurrentRow.Cells["SZID"].Value.ToString() + "'");
             listBox1.Items.Clear();
             for (int i = 0; i < adatok.Tables[0].Rows.Count; i++)
