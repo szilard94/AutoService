@@ -912,6 +912,7 @@
             this.lezaras.TabIndex = 9;
             this.lezaras.Text = "Lezáras";
             this.lezaras.UseVisualStyleBackColor = true;
+            this.lezaras.Click += new System.EventHandler(this.lezaras_Click);
             // 
             // label21
             // 

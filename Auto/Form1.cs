@@ -18,6 +18,16 @@ namespace Auto
             keresoeredmeny.DataSource = lekeres.selectFrom("nev AS Név, cim AS Cím, ceg AS Cég, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat", "Jarmuvek", "Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID", "1=1").Tables[0];
             frissit();
             szervizkereso(null, null);
+            if (leFogJarni() != 0)
+            {
+                MessageBox.Show("A következő 30 napban " + leFogJarni() + " atónak is le fog járni a műszaki vizsgája.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public int leFogJarni()
+        {
+            ConnectToDB kapcsolat = new ConnectToDB();
+            return kapcsolat.selectFrom("SELECT Lejárat, nev AS Tulajnév, telefon AS Telefon, mobil AS Mobil, Rendszám, Alvázszám, Márka, Típus, Évjárat FROM (SELECT Jarmuvek.AID, rendszam AS Rendszám, alvazszam AS Alvázszám, marka AS Márka, tipus AS Típus, evjarat AS Évjárat, lejarat AS Lejárat, UID FROM (SELECT AID, MAX(lejarat) AS lejarat FROM Muszaki GROUP BY AID) temp JOIN Jarmuvek ON temp.AID = Jarmuvek.AID) temp2 JOIN Ugyfelek ON temp2.UID = Ugyfelek.UID WHERE Lejárat BETWEEN (SELECT CONVERT(DATE,DATEADD(day, 0, getdate()),112)) AND (SELECT CONVERT(DATE,DATEADD(day, 30, getdate()),112))").Tables[0].Rows.Count;
         }
 
         private void keresogomb_Click(object sender, EventArgs e)
@@ -404,6 +414,14 @@ namespace Auto
             textBox3.Text = "";
             textBox4.Text = "";
             textBox1.Text = "";
+        }
+
+        private void lezaras_Click(object sender, EventArgs e)
+        {
+            ConnectToDB kapcsolat = new ConnectToDB();
+            kapcsolat.update("Szerviz", "lezarva=1", "SZID = " + dataGridView2.CurrentRow.Cells["SZID"].Value.ToString());
+            szervizkereso(null, null);
+            kivalasztas(null, null);
         }
     }
 }

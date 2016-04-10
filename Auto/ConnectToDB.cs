@@ -77,6 +77,16 @@ namespace Auto
             cnn.Close();
         }
 
+        public void update (string table, string set, string where)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cnn;
+            cmd.CommandText = "UPDATE " + table + " SET " + set + " WHERE " + where;
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
         public void closeConnection()
         {
             cnn.Close();
