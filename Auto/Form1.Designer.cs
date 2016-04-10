@@ -182,6 +182,7 @@
             this.keresoeredmeny.Location = new System.Drawing.Point(12, 112);
             this.keresoeredmeny.MultiSelect = false;
             this.keresoeredmeny.Name = "keresoeredmeny";
+            this.keresoeredmeny.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.keresoeredmeny.ReadOnly = true;
             this.keresoeredmeny.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.keresoeredmeny.RowTemplate.ReadOnly = true;
@@ -290,6 +291,8 @@
             // 
             // muszakilejarata
             // 
+            this.muszakilejarata.CustomFormat = "yyyy-MM-dd";
+            this.muszakilejarata.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.muszakilejarata.Location = new System.Drawing.Point(316, 432);
             this.muszakilejarata.Name = "muszakilejarata";
             this.muszakilejarata.Size = new System.Drawing.Size(200, 20);
@@ -298,11 +301,13 @@
             // 
             // muszakiztatasideje
             // 
+            this.muszakiztatasideje.CustomFormat = "yyyy-MM-dd";
+            this.muszakiztatasideje.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.muszakiztatasideje.Location = new System.Drawing.Point(12, 432);
             this.muszakiztatasideje.Name = "muszakiztatasideje";
             this.muszakiztatasideje.Size = new System.Drawing.Size(200, 20);
             this.muszakiztatasideje.TabIndex = 10;
-            this.muszakiztatasideje.Value = new System.DateTime(2016, 4, 9, 0, 0, 0, 0);
+            this.muszakiztatasideje.Value = new System.DateTime(2016, 4, 10, 0, 0, 0, 0);
             // 
             // muszakiaktualizalas
             // 
@@ -358,11 +363,23 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView1.RowTemplate.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(761, 232);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.muszakivalaszt);
             // 
             // panel3
             // 
@@ -425,7 +442,7 @@
             this.panel4.Controls.Add(this.rendszam);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.ujalvaz);
-            this.panel4.Location = new System.Drawing.Point(2, -107);
+            this.panel4.Location = new System.Drawing.Point(2, -203);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(782, 501);
             this.panel4.TabIndex = 6;
@@ -745,7 +762,7 @@
             this.panel5.Controls.Add(this.Lezárás);
             this.panel5.Controls.Add(this.label21);
             this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Location = new System.Drawing.Point(4, -145);
+            this.panel5.Location = new System.Drawing.Point(4, -234);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(775, 509);
             this.panel5.TabIndex = 8;

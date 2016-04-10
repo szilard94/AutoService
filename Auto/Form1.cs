@@ -16,7 +16,7 @@ namespace Auto
             InitializeComponent();
             ConnectToDB lekeres = new ConnectToDB();
             keresoeredmeny.DataSource = lekeres.selectFrom("nev AS Név, cim AS Cím, ceg AS Cég, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat", "Jarmuvek", "Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID", "1=1").Tables[0];
-
+            frissit();
         }
 
         private void keresogomb_Click(object sender, EventArgs e)
@@ -171,23 +171,34 @@ namespace Auto
                 ConnectToDB lekeres = new ConnectToDB();
                 DataSet datas = lekeres.selectFrom("SELECT rendszam, marka, tipus, evjarat, nev, fax, telefon, mobil, megye, cim, email FROM Jarmuvek JOIN Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID WHERE alvazszam = '" + alvazmuszaki.Text.ToString() + "'");
                 ConnectToDB muszaklekeres = new ConnectToDB();
-                DataSet timedate = muszaklekeres.selectFrom("SELECT datum,lejarat FROM Muszaki WHERE AID =(SELECT AID FROM Jarmuvek WHERE alvazszam='" + alvazmuszaki.Text.ToString() + "')");
+                DataSet timedate = muszaklekeres.selectFrom("SELECT TOP 1 datum,lejarat FROM Muszaki WHERE AID =(SELECT AID FROM Jarmuvek WHERE alvazszam='" + alvazmuszaki.Text.ToString() + "') ORDER BY datum DESC");
                 if (datas.Tables[0].Rows.Count != 0)
                 {
                     muszakirendszam.Text = datas.Tables[0].Rows[0]["rendszam"].ToString();
                     muszakimarka.Text = datas.Tables[0].Rows[0]["marka"].ToString();
                     muszakitipus.Text = datas.Tables[0].Rows[0]["tipus"].ToString();
                     muszakievjarat.Text = datas.Tables[0].Rows[0]["evjarat"].ToString();
-
-                muszakiaktualizalas.Enabled = true;
+                    muszakiaktualizalas.Enabled = true;
                 }
-                if (datas.Tables[0].Rows.Count != 0)
+                else
+                {
+                    muszakiztatasideje.Value = DateTime.Today;
+                    muszakilejarata.Value = DateTime.Today;
+                    muszakirendszam.Text = "";
+                    muszakimarka.Text = "";
+                    muszakitipus.Text = "";
+                    muszakievjarat.Text = "";
+                }
+                if (timedate.Tables[0].Rows.Count != 0)
                 {
                     muszakiztatasideje.Value = Convert.ToDateTime(timedate.Tables[0].Rows[0]["datum"].ToString());
+                    muszakilejarata.Value = Convert.ToDateTime(timedate.Tables[0].Rows[0]["lejarat"].ToString());
                 }
             }
             else
             {
+                muszakiztatasideje.Value = DateTime.Today;
+                muszakilejarata.Value = DateTime.Today;
                 muszakirendszam.Text = "";
                 muszakimarka.Text = "";
                 muszakitipus.Text = "";
@@ -335,7 +346,19 @@ namespace Auto
         private void muszakiaktualizalas_Click(object sender, EventArgs e)
         {
             ConnectToDB muszaki = new ConnectToDB();
-            muszaki.insertInto("Muszaki", "AID,datum,lejarat", "'" + muszaki.selectFrom("SELECT AID  FROM Jarmuvek WHERE alvazszam ='" + alvazmuszaki.Text.ToString() + "'").Tables[0].Rows[0]["AID"].ToString() + "','" + muszakiztatasideje.Value + "','" + muszakilejarata.Value + "'");
+            muszaki.insertInto("Muszaki", "AID,datum,lejarat", "'" + muszaki.selectFrom("SELECT AID  FROM Jarmuvek WHERE alvazszam ='" + alvazmuszaki.Text.ToString() + "'").Tables[0].Rows[0]["AID"].ToString() + "','" + muszakiztatasideje.Value.ToString("yyyy-MM-dd") + "','" + muszakilejarata.Value.ToString("yyyy-MM-dd") + "'");
+            frissit();
+        }
+
+        private void frissit ()
+        {
+            ConnectToDB kapcsolat = new ConnectToDB();
+            dataGridView1.DataSource = kapcsolat.selectFrom("SELECT Lejárat, nev AS Tulajnév, telefon AS Telefon, mobil AS Mobil, Rendszám, Alvázszám, Márka, Típus, Évjárat FROM (SELECT Jarmuvek.AID, rendszam AS Rendszám, alvazszam AS Alvázszám, marka AS Márka, tipus AS Típus, evjarat AS Évjárat, lejarat AS Lejárat, UID FROM (SELECT AID, MAX(lejarat) AS lejarat FROM Muszaki GROUP BY AID) temp JOIN Jarmuvek ON temp.AID = Jarmuvek.AID) temp2 JOIN Ugyfelek ON temp2.UID = Ugyfelek.UID").Tables[0];
+        }
+
+        private void muszakivalaszt(object sender, DataGridViewCellEventArgs e)
+        {
+            alvazmuszaki.Text = dataGridView1.CurrentRow.Cells["Alvázszám"].Value.ToString();
         }
     }
 }
