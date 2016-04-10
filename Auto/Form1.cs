@@ -11,6 +11,7 @@ namespace Auto
 {
     public partial class Form1 : Form
     {
+        public bool showed = false;
         public Form1()
         {
             InitializeComponent();
@@ -18,11 +19,17 @@ namespace Auto
             keresoeredmeny.DataSource = lekeres.selectFrom("nev AS Név, cim AS Cím, ceg AS Cég, rendszam AS Rendszám, marka AS Márka, tipus AS Típus, alvazszam AS Alvázszám, evjarat AS Évjárat", "Jarmuvek", "Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID", "1=1").Tables[0];
             frissit();
             szervizkereso(null, null);
+            timer1.Start();
             if (leFogJarni() != 0)
             {
-                MessageBox.Show("A következő 30 napban " + leFogJarni() + " atónak is le fog járni a műszaki vizsgája.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.notifyIcon1.BalloonTipText = "A következő 30 napban " + leFogJarni() + " autónak is le fog járni a műszaki vizsgája.";
+                this.notifyIcon1.BalloonTipTitle = "Title";     
+                this.notifyIcon1.Visible = true;
+                this.notifyIcon1.ShowBalloonTip(5);
+                // MessageBox.Show("A következő 30 napban " + leFogJarni() + " atónak is le fog járni a műszaki vizsgája.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+       
 
         public int leFogJarni()
         {
@@ -422,6 +429,30 @@ namespace Auto
             kapcsolat.update("Szerviz", "lezarva=1", "SZID = " + dataGridView2.CurrentRow.Cells["SZID"].Value.ToString());
             szervizkereso(null, null);
             kivalasztas(null, null);
+        }
+       // int duration=100;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+           // duration-- ;
+            if (DateTime.Now.ToString("mm")=="00")
+            {
+                if (!showed)
+                {
+                    this.notifyIcon1.BalloonTipText = "A következő 30 napban " + leFogJarni() + " autónak is le fog járni a műszaki vizsgája.";
+                    this.notifyIcon1.BalloonTipTitle = "Title";
+                    this.notifyIcon1.Visible = true;
+                    this.notifyIcon1.ShowBalloonTip(5);
+                    showed = true;
+                }
+                //timer1.Stop();
+//duration = 100;
+               // timer1.Start();
+            }
+            else
+            {
+                showed = false;
+            }
         }
     }
 }
