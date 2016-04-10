@@ -219,7 +219,7 @@
             this.panel2.Controls.Add(this.muszakirendszam);
             this.panel2.Controls.Add(this.alvazmuszaki);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(4, 58);
+            this.panel2.Location = new System.Drawing.Point(4, 70);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(778, 488);
             this.panel2.TabIndex = 3;
@@ -294,6 +294,7 @@
             this.muszakilejarata.Name = "muszakilejarata";
             this.muszakilejarata.Size = new System.Drawing.Size(200, 20);
             this.muszakilejarata.TabIndex = 11;
+            this.muszakilejarata.Value = new System.DateTime(2016, 4, 10, 0, 0, 0, 0);
             // 
             // muszakiztatasideje
             // 
@@ -305,12 +306,14 @@
             // 
             // muszakiaktualizalas
             // 
+            this.muszakiaktualizalas.Enabled = false;
             this.muszakiaktualizalas.Location = new System.Drawing.Point(613, 429);
             this.muszakiaktualizalas.Name = "muszakiaktualizalas";
             this.muszakiaktualizalas.Size = new System.Drawing.Size(75, 23);
             this.muszakiaktualizalas.TabIndex = 9;
             this.muszakiaktualizalas.Text = "Aktualizálás";
             this.muszakiaktualizalas.UseVisualStyleBackColor = true;
+            this.muszakiaktualizalas.Click += new System.EventHandler(this.muszakiaktualizalas_Click);
             // 
             // muszakievjarat
             // 
@@ -422,7 +425,7 @@
             this.panel4.Controls.Add(this.rendszam);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.ujalvaz);
-            this.panel4.Location = new System.Drawing.Point(2, 57);
+            this.panel4.Location = new System.Drawing.Point(2, -107);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(782, 501);
             this.panel4.TabIndex = 6;
@@ -742,7 +745,7 @@
             this.panel5.Controls.Add(this.Lezárás);
             this.panel5.Controls.Add(this.label21);
             this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Location = new System.Drawing.Point(6, 48);
+            this.panel5.Location = new System.Drawing.Point(4, -145);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(775, 509);
             this.panel5.TabIndex = 8;

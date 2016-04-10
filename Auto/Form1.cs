@@ -170,6 +170,8 @@ namespace Auto
             {
                 ConnectToDB lekeres = new ConnectToDB();
                 DataSet datas = lekeres.selectFrom("SELECT rendszam, marka, tipus, evjarat, nev, fax, telefon, mobil, megye, cim, email FROM Jarmuvek JOIN Ugyfelek ON Jarmuvek.UID = Ugyfelek.UID WHERE alvazszam = '" + alvazmuszaki.Text.ToString() + "'");
+                ConnectToDB muszaklekeres = new ConnectToDB();
+                DataSet timedate = muszaklekeres.selectFrom("SELECT datum,lejarat FROM Muszaki WHERE AID =(SELECT AID FROM Jarmuvek WHERE alvazszam='" + alvazmuszaki.Text.ToString() + "')");
                 if (datas.Tables[0].Rows.Count != 0)
                 {
                     muszakirendszam.Text = datas.Tables[0].Rows[0]["rendszam"].ToString();
@@ -177,9 +179,20 @@ namespace Auto
                     muszakitipus.Text = datas.Tables[0].Rows[0]["tipus"].ToString();
                     muszakievjarat.Text = datas.Tables[0].Rows[0]["evjarat"].ToString();
 
-                    szerviznyitas.Enabled = true;
+                muszakiaktualizalas.Enabled = true;
                 }
-
+                if (datas.Tables[0].Rows.Count != 0)
+                {
+                    muszakiztatasideje.Value = Convert.ToDateTime(timedate.Tables[0].Rows[0]["datum"].ToString());
+                }
+            }
+            else
+            {
+                muszakirendszam.Text = "";
+                muszakimarka.Text = "";
+                muszakitipus.Text = "";
+                muszakievjarat.Text = "";
+                muszakiaktualizalas.Enabled = false;
             }
             
         }
@@ -317,6 +330,12 @@ namespace Auto
             {
                 listBox1.Items.Add(adatok.Tables[0].Rows[i]["munkalatNeve"].ToString() + " - " + adatok.Tables[0].Rows[i]["munkaAr"].ToString() + " Ft");
             }
+        }
+
+        private void muszakiaktualizalas_Click(object sender, EventArgs e)
+        {
+            ConnectToDB muszaki = new ConnectToDB();
+            muszaki.insertInto("Muszaki", "AID,datum,lejarat", "'" + muszaki.selectFrom("SELECT AID  FROM Jarmuvek WHERE alvazszam ='" + alvazmuszaki.Text.ToString() + "'").Tables[0].Rows[0]["AID"].ToString() + "','" + muszakiztatasideje.Value + "','" + muszakilejarata.Value + "'");
         }
     }
 }
