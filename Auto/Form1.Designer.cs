@@ -102,7 +102,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.nyomtatas = new System.Windows.Forms.Button();
-            this.Lezárás = new System.Windows.Forms.Button();
+            this.lezaras = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -761,7 +761,7 @@
             this.panel5.Controls.Add(this.textBox4);
             this.panel5.Controls.Add(this.textBox3);
             this.panel5.Controls.Add(this.nyomtatas);
-            this.panel5.Controls.Add(this.Lezárás);
+            this.panel5.Controls.Add(this.lezaras);
             this.panel5.Controls.Add(this.label21);
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Location = new System.Drawing.Point(4, 49);
@@ -859,12 +859,14 @@
             // 
             // hozzaad
             // 
+            this.hozzaad.Enabled = false;
             this.hozzaad.Location = new System.Drawing.Point(577, 361);
             this.hozzaad.Name = "hozzaad";
             this.hozzaad.Size = new System.Drawing.Size(173, 23);
             this.hozzaad.TabIndex = 14;
             this.hozzaad.Text = "Hozzáad";
             this.hozzaad.UseVisualStyleBackColor = true;
+            this.hozzaad.Click += new System.EventHandler(this.hozzaad_Click);
             // 
             // label25
             // 
@@ -877,6 +879,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(576, 326);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(68, 20);
@@ -884,6 +887,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(404, 268);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(346, 20);
@@ -899,15 +903,15 @@
             this.nyomtatas.Text = "Nyomtatás";
             this.nyomtatas.UseVisualStyleBackColor = true;
             // 
-            // Lezárás
+            // lezaras
             // 
-            this.Lezárás.Enabled = false;
-            this.Lezárás.Location = new System.Drawing.Point(442, 463);
-            this.Lezárás.Name = "Lezárás";
-            this.Lezárás.Size = new System.Drawing.Size(75, 23);
-            this.Lezárás.TabIndex = 9;
-            this.Lezárás.Text = "Lezáras";
-            this.Lezárás.UseVisualStyleBackColor = true;
+            this.lezaras.Enabled = false;
+            this.lezaras.Location = new System.Drawing.Point(442, 463);
+            this.lezaras.Name = "lezaras";
+            this.lezaras.Size = new System.Drawing.Size(75, 23);
+            this.lezaras.TabIndex = 9;
+            this.lezaras.Text = "Lezáras";
+            this.lezaras.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
@@ -920,6 +924,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(650, 326);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
@@ -1023,7 +1028,7 @@
         private System.Windows.Forms.Button szerviztortenet;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button nyomtatas;
-        private System.Windows.Forms.Button Lezárás;
+        private System.Windows.Forms.Button lezaras;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView2;

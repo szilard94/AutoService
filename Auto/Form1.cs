@@ -280,18 +280,18 @@ namespace Auto
 
         private void szerviznyitas_Click(object sender, EventArgs e)
         {
-            if(tulajnev.Enabled == false)
+            if (tulajnev.Enabled == false)
             {
                 ConnectToDB kapcsolat = new ConnectToDB();
                 string AID = kapcsolat.selectFrom("AID", "Jarmuvek", "alvazszam = '" + ujalvaz.Text.ToString() + "'").Tables[0].Rows[0]["AID"].ToString();
-                kapcsolat.insertInto("Szerviz","AID, datum, kmOra", AID + ",GETDATE()," + kmora.Text.ToString());
+                kapcsolat.insertInto("Szerviz", "AID, datum, kmOra", AID + ",GETDATE()," + kmora.Text.ToString());
 
                 MessageBox.Show("Sikeres hozzáadás, később szerkeztheted.", "Siker", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ujalvaz.Text = "";
             }
             else
             {
-                if(checkBox3.Checked == false)
+                if (checkBox3.Checked == false)
                 {
                     ConnectToDB kapcsolat = new ConnectToDB();
                     kapcsolat.insertInto("Jarmuvek", "UID, rendszam, alvazszam, marka, tipus, evjarat", ugyfellista.CurrentRow.Cells["UID"].Value.ToString() + ",'"
@@ -301,6 +301,31 @@ namespace Auto
                     kapcsolat.insertInto("Szerviz", "AID, datum, kmOra", AID + ",GETDATE()," + kmora.Text.ToString());
                     MessageBox.Show("Sikeres hozzáadás, később szerkeztheted. (Új autó mentése sikeres!)", "Siker", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ujalvaz.Text = "";
+                }
+                else
+                {
+                    if (tulajnev.Text.ToString() == "" || fax.Text.ToString() == "" || telefon.Text.ToString() == "" ||
+                        mobil.Text.ToString() == "" || email.Text.ToString() == "" || megye.Text.ToString() == "" || Cim.Text.ToString() == "")
+                    {
+                        MessageBox.Show("Minden mező kitöltése kötelező!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        ConnectToDB kapcsolat = new ConnectToDB();
+                        kapcsolat.insertInto("Ugyfelek", "nev,fax,telefon,mobil,megye,cim,email", "'" + tulajnev.Text.ToString() + "', '" +
+                            fax.Text.ToString() + "', '" + telefon.Text.ToString() + "', '" + mobil.Text.ToString() + "', '" +
+                            megye.Text.ToString() + "', '" + Cim.Text.ToString() + "', '" + email.Text.ToString() + "'");
+                        string UID = kapcsolat.selectFrom("SELECT UID FROM Ugyfelek WHERE nev='" + tulajnev.Text.ToString() + "' AND fax='" + fax.Text.ToString() + "' AND telefon='" +
+                            telefon.Text.ToString() + "' AND mobil='" + mobil.Text.ToString() + "' AND megye='" + megye.Text.ToString() + "' AND cim='" +
+                            Cim.Text.ToString() + "' AND email='" + email.Text.ToString() + "'").Tables[0].Rows[0]["UID"].ToString();
+                        kapcsolat.insertInto("Jarmuvek", "UID, rendszam, alvazszam, marka, tipus, evjarat", UID + ",'"
+                                    + rendszam.Text.ToString() + "','" + ujalvaz.Text.ToString() + "','" + marka.Text.ToString() + "','"
+                                    + tipus.Text.ToString() + "'," + evjarat.Text.ToString());
+                        string AID = kapcsolat.selectFrom("AID", "Jarmuvek", "alvazszam = '" + ujalvaz.Text.ToString() + "'").Tables[0].Rows[0]["AID"].ToString();
+                        kapcsolat.insertInto("Szerviz", "AID, datum, kmOra", AID + ",GETDATE()," + kmora.Text.ToString());
+                        MessageBox.Show("Sikeres hozzáadás, később szerkeztheted. (Új autó mentése sikeres!)", "Siker", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ujalvaz.Text = "";
+                    }
                 }
             }
         }
@@ -331,10 +356,18 @@ namespace Auto
             if (kapcsolat.selectFrom("lezarva", "Szerviz", "SZID = '" + dataGridView2.CurrentRow.Cells["SZID"].Value.ToString() + "'").Tables[0].Rows[0][0].ToString() == "False")
             {
                 hozzaad.Enabled = true;
+                textBox3.Enabled = true;
+                textBox4.Enabled = true;
+                textBox1.Enabled = true;
+                lezaras.Enabled = true;
             }
             else
             {
                 hozzaad.Enabled = false;
+                textBox3.Enabled = false;
+                textBox4.Enabled = false;
+                textBox1.Enabled = false;
+                lezaras.Enabled = false;
             }
             label27.Text = dataGridView2.CurrentRow.Cells["Rendszám"].Value.ToString() + " - " + dataGridView2.CurrentRow.Cells["Alvázszám"].Value.ToString();
             DataSet adatok = kapcsolat.selectFrom("munkalatNeve, munkaAr", "Munkalatok", "SZID = '" + dataGridView2.CurrentRow.Cells["SZID"].Value.ToString() + "'");
@@ -361,6 +394,16 @@ namespace Auto
         private void muszakivalaszt(object sender, DataGridViewCellEventArgs e)
         {
             alvazmuszaki.Text = dataGridView1.CurrentRow.Cells["Alvázszám"].Value.ToString();
+        }
+
+        private void hozzaad_Click(object sender, EventArgs e)
+        {
+            ConnectToDB kapcsolat = new ConnectToDB();
+            kapcsolat.insertInto("Munkalatok", "SZID,munkalatNeve,munkaOra,munkaAr", dataGridView2.CurrentRow.Cells["SZID"].Value.ToString() + ", '" + textBox3.Text.ToString() + "', " + textBox1.Text.ToString() + ", " + textBox4.Text.ToString());
+            kivalasztas(null, null);
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox1.Text = "";
         }
     }
 }
