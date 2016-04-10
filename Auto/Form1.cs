@@ -23,10 +23,9 @@ namespace Auto
             if (leFogJarni() != 0)
             {
                 this.notifyIcon1.BalloonTipText = "A következő 30 napban " + leFogJarni() + " autónak is le fog járni a műszaki vizsgája.";
-                this.notifyIcon1.BalloonTipTitle = "Title";     
+                this.notifyIcon1.BalloonTipTitle = "Figyelmeztetés";
                 this.notifyIcon1.Visible = true;
-                this.notifyIcon1.ShowBalloonTip(5);
-                // MessageBox.Show("A következő 30 napban " + leFogJarni() + " atónak is le fog járni a műszaki vizsgája.", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.notifyIcon1.ShowBalloonTip(10);
             }
         }
        
@@ -430,24 +429,22 @@ namespace Auto
             szervizkereso(null, null);
             kivalasztas(null, null);
         }
-       // int duration=100;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-
-           // duration-- ;
             if (DateTime.Now.ToString("mm")=="00")
             {
                 if (!showed)
                 {
-                    this.notifyIcon1.BalloonTipText = "A következő 30 napban " + leFogJarni() + " autónak is le fog járni a műszaki vizsgája.";
-                    this.notifyIcon1.BalloonTipTitle = "Title";
-                    this.notifyIcon1.Visible = true;
-                    this.notifyIcon1.ShowBalloonTip(5);
-                    showed = true;
+                    if (leFogJarni() != 0)
+                    {
+                        this.notifyIcon1.BalloonTipText = "A következő 30 napban " + leFogJarni() + " autónak is le fog járni a műszaki vizsgája.";
+                        this.notifyIcon1.BalloonTipTitle = "Figyelmeztetés";
+                        this.notifyIcon1.Visible = true;
+                        this.notifyIcon1.ShowBalloonTip(10);
+                        showed = true;
+                    }
                 }
-                //timer1.Stop();
-//duration = 100;
-               // timer1.Start();
             }
             else
             {
