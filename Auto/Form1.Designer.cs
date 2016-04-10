@@ -182,11 +182,11 @@
             this.keresoeredmeny.Location = new System.Drawing.Point(12, 112);
             this.keresoeredmeny.MultiSelect = false;
             this.keresoeredmeny.Name = "keresoeredmeny";
-            this.keresoeredmeny.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.keresoeredmeny.ReadOnly = true;
             this.keresoeredmeny.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.keresoeredmeny.RowTemplate.ReadOnly = true;
             this.keresoeredmeny.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.keresoeredmeny.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.keresoeredmeny.Size = new System.Drawing.Size(751, 336);
             this.keresoeredmeny.TabIndex = 1;
             // 
@@ -442,7 +442,7 @@
             this.panel4.Controls.Add(this.rendszam);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.ujalvaz);
-            this.panel4.Location = new System.Drawing.Point(2, -203);
+            this.panel4.Location = new System.Drawing.Point(2, 56);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(782, 501);
             this.panel4.TabIndex = 6;
@@ -716,6 +716,7 @@
             // 
             // beallitasok
             // 
+            this.beallitasok.Enabled = false;
             this.beallitasok.Location = new System.Drawing.Point(658, 12);
             this.beallitasok.Name = "beallitasok";
             this.beallitasok.Size = new System.Drawing.Size(98, 23);
@@ -762,7 +763,7 @@
             this.panel5.Controls.Add(this.Lezárás);
             this.panel5.Controls.Add(this.label21);
             this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Location = new System.Drawing.Point(4, -234);
+            this.panel5.Location = new System.Drawing.Point(4, 49);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(775, 509);
             this.panel5.TabIndex = 8;
