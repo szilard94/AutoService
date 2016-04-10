@@ -89,6 +89,9 @@
             this.ujszerviz = new System.Windows.Forms.Button();
             this.szerviztortenet = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.szervizrendszam = new System.Windows.Forms.RadioButton();
             this.szervizalvazszam = new System.Windows.Forms.RadioButton();
@@ -100,16 +103,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.nyomtatas = new System.Windows.Forms.Button();
             this.Lezárás = new System.Windows.Forms.Button();
-            this.mentes = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keresoeredmeny)).BeginInit();
             this.panel2.SuspendLayout();
@@ -745,11 +740,6 @@
             this.panel5.Controls.Add(this.textBox3);
             this.panel5.Controls.Add(this.nyomtatas);
             this.panel5.Controls.Add(this.Lezárás);
-            this.panel5.Controls.Add(this.mentes);
-            this.panel5.Controls.Add(this.label24);
-            this.panel5.Controls.Add(this.label23);
-            this.panel5.Controls.Add(this.label22);
-            this.panel5.Controls.Add(this.textBox2);
             this.panel5.Controls.Add(this.label21);
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Location = new System.Drawing.Point(6, 48);
@@ -757,6 +747,35 @@
             this.panel5.Size = new System.Drawing.Size(775, 509);
             this.panel5.TabIndex = 8;
             this.panel5.Visible = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(104, 235);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(10, 13);
+            this.label27.TabIndex = 22;
+            this.label27.Text = "-";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(11, 234);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(92, 13);
+            this.label26.TabIndex = 21;
+            this.label26.Text = "Kiválasztott jármű:";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(408, 49);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(217, 17);
+            this.checkBox4.TabIndex = 20;
+            this.checkBox4.Text = "Keressen a lezárt szervízelések között is";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.szervizkereso);
             // 
             // listBox1
             // 
@@ -818,9 +837,9 @@
             // 
             // hozzaad
             // 
-            this.hozzaad.Location = new System.Drawing.Point(503, 326);
+            this.hozzaad.Location = new System.Drawing.Point(577, 361);
             this.hozzaad.Name = "hozzaad";
-            this.hozzaad.Size = new System.Drawing.Size(247, 23);
+            this.hozzaad.Size = new System.Drawing.Size(173, 23);
             this.hozzaad.TabIndex = 14;
             this.hozzaad.Text = "Hozzáad";
             this.hozzaad.UseVisualStyleBackColor = true;
@@ -828,7 +847,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(418, 310);
+            this.label25.Location = new System.Drawing.Point(574, 310);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(23, 13);
             this.label25.TabIndex = 13;
@@ -836,7 +855,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(404, 326);
+            this.textBox4.Location = new System.Drawing.Point(576, 326);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(68, 20);
             this.textBox4.TabIndex = 12;
@@ -851,7 +870,7 @@
             // nyomtatas
             // 
             this.nyomtatas.Enabled = false;
-            this.nyomtatas.Location = new System.Drawing.Point(675, 463);
+            this.nyomtatas.Location = new System.Drawing.Point(660, 463);
             this.nyomtatas.Name = "nyomtatas";
             this.nyomtatas.Size = new System.Drawing.Size(75, 23);
             this.nyomtatas.TabIndex = 10;
@@ -861,60 +880,17 @@
             // Lezárás
             // 
             this.Lezárás.Enabled = false;
-            this.Lezárás.Location = new System.Drawing.Point(543, 463);
+            this.Lezárás.Location = new System.Drawing.Point(442, 463);
             this.Lezárás.Name = "Lezárás";
             this.Lezárás.Size = new System.Drawing.Size(75, 23);
             this.Lezárás.TabIndex = 9;
             this.Lezárás.Text = "Lezáras";
             this.Lezárás.UseVisualStyleBackColor = true;
             // 
-            // mentes
-            // 
-            this.mentes.Location = new System.Drawing.Point(412, 467);
-            this.mentes.Name = "mentes";
-            this.mentes.Size = new System.Drawing.Size(65, 23);
-            this.mentes.TabIndex = 8;
-            this.mentes.Text = "Mentés";
-            this.mentes.UseVisualStyleBackColor = true;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(765, 423);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(13, 13);
-            this.label24.TabIndex = 7;
-            this.label24.Text = "ft";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(572, 422);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(15, 13);
-            this.label23.TabIndex = 6;
-            this.label23.Text = "H";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(593, 422);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(59, 13);
-            this.label22.TabIndex = 5;
-            this.label22.Text = "Munka Ára";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(650, 419);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(389, 419);
+            this.label21.Location = new System.Drawing.Point(647, 310);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(72, 13);
             this.label21.TabIndex = 2;
@@ -922,39 +898,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(466, 416);
+            this.textBox1.Location = new System.Drawing.Point(650, 326);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(408, 49);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(217, 17);
-            this.checkBox4.TabIndex = 20;
-            this.checkBox4.Text = "Keressen a lezárt szervízelések között is";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.szervizkereso);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(11, 234);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(92, 13);
-            this.label26.TabIndex = 21;
-            this.label26.Text = "Kiválasztott jármű:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(104, 235);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(10, 13);
-            this.label27.TabIndex = 22;
-            this.label27.Text = "-";
             // 
             // Form1
             // 
@@ -1055,11 +1002,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button nyomtatas;
         private System.Windows.Forms.Button Lezárás;
-        private System.Windows.Forms.Button mentes;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView2;

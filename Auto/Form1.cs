@@ -302,7 +302,21 @@ namespace Auto
 
         private void kivalasztas(object sender, EventArgs e)
         {
+            ConnectToDB kapcsolat = new ConnectToDB();
+            if (kapcsolat.selectFrom("lezarva", "Szerviz", "SZID = '" + dataGridView2.CurrentRow.Cells["SZID"].Value.ToString() + "'").Tables[0].Rows[0][0].ToString() == "False")
+            {
+                hozzaad.Enabled = true;
+            }
+            else
+            {
+                hozzaad.Enabled = false;
+            }
             label27.Text = dataGridView2.CurrentRow.Cells["Rendszám"].Value.ToString() + " - " + dataGridView2.CurrentRow.Cells["Alvázszám"].Value.ToString();
+            DataSet adatok = kapcsolat.selectFrom("munkalatNeve, munkaAr", "Munkalatok", "SZID = '" + dataGridView2.CurrentRow.Cells["SZID"].Value.ToString() + "'");
+            for (int i = 0; i < adatok.Tables[0].Rows.Count; i++)
+            {
+                listBox1.Items.Add(adatok.Tables[0].Rows[i]["munkalatNeve"].ToString() + " - " + adatok.Tables[0].Rows[i]["munkaAr"].ToString() + " Ft");
+            }
         }
     }
 }
