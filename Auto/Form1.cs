@@ -454,5 +454,10 @@ namespace Auto
                 showed = false;
             }
         }
+
+        private void notifyIcon1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+        }
     }
 }
